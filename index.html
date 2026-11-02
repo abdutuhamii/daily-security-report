@@ -560,20 +560,32 @@
       color: #475569;
     }
 
+    /* Critical Security & Legal issues */
     .pill-alert {
-      background-color: rgba(255, 59, 105, 0.15);
+      background-color: rgba(255, 59, 105, 0.12);
       color: var(--dp-coral);
+      border: 1px solid rgba(255, 59, 105, 0.2);
     }
 
-    .pill-warning {
-      background-color: #fff7ed;
-      color: #ea580c;
-    }
-
+    /* Physical Damage & Cargo Breaches */
     .pill-damage {
-      background-color: rgba(124, 58, 237, 0.15);
+      background-color: rgba(124, 58, 237, 0.12);
       color: var(--dp-purple);
-      border: 1px solid rgba(124, 58, 237, 0.25);
+      border: 1px solid rgba(124, 58, 237, 0.2);
+    }
+
+    /* Standard General Incidents */
+    .pill-warning {
+      background-color: rgba(234, 88, 12, 0.12);
+      color: #ea580c;
+      border: 1px solid rgba(234, 88, 12, 0.2);
+    }
+
+    /* Minor / Preventative Notices */
+    .pill-caution {
+      background-color: rgba(217, 119, 6, 0.12);
+      color: #d97706;
+      border: 1px solid rgba(217, 119, 6, 0.2);
     }
 
     /* SPLIT BREAKDOWN PILLS */
@@ -915,7 +927,9 @@
       <div class="kpi-card kpi-coral">
         <div class="kpi-title">Incident Reports</div>
         <div class="kpi-value" id="kpiIncidentValue">0 Reports</div>
-        <div class="kpi-sub" id="kpiIncidentSub">0 Security notice &bull; 0 Near Miss &bull; 0 Damage</div>
+        <div class="kpi-sub" id="kpiIncidentSub1">0 Security notice &bull; 0 Near Miss &bull; 0 Damage &bull; 0 Incident
+        </div>
+        <div class="kpi-sub" id="kpiIncidentSub2">0 Theft Case &bull; 0 Bribery Case &bull; 0 Container Breach</div>
       </div>
 
       <div class="kpi-card kpi-silver">
@@ -1694,6 +1708,10 @@
       let secNotice = 0;
       let nearMiss = 0;
       let damage = 0;
+      let incident = 0;
+      let theftCase = 0;
+      let briberyCase = 0;
+      let containerBreach = 0;
 
       document.querySelectorAll('#incidentTable tbody tr').forEach(row => {
         total++;
@@ -1705,29 +1723,43 @@
           nearMiss++;
         } else if (type.includes('damage')) {
           damage++;
+        } else if (type.includes('incident')) {
+          incident++;
+        } else if (type.includes('theft')) {
+          theftCase++;
+        } else if (type.includes('bribery')) {
+          briberyCase++;
+        } else if (type.includes('container')) {
+          containerBreach++;
         }
       });
 
       const valEl = document.getElementById('kpiIncidentValue');
-      const subEl = document.getElementById('kpiIncidentSub');
+      const subEl1 = document.getElementById('kpiIncidentSub1');
+      const subEl2 = document.getElementById('kpiIncidentSub2')
 
       if (valEl) {
         valEl.innerText = `${total} Report${total === 1 ? '' : 's'}`;
       }
-      if (subEl) {
-        subEl.innerHTML = `${secNotice} Security Notice &bull; ${nearMiss} Near Miss &bull; ${damage} Damage`;
+      if (subEl1) {
+        subEl1.innerHTML = `${secNotice} Security Notice &bull; ${nearMiss} Near Miss &bull; ${damage} Damage &bull; ${incident} Incident`;
+      }
+      if (subEl2) {
+        subEl2.innerHTML = `${theftCase} Theft Case &bull; ${briberyCase} Bribery Case &bull; ${containerBreach} Container Breach`
       }
     }
 
     // INCIDENT STATUS STYLE
     function updateIncidentStyle(select) {
       const val = select.value.toLowerCase();
-      if (val.includes('security')) {
+      if (val.includes('security') || val.includes('theft') || val.includes('bribery')) {
         select.className = 'status-select pill-alert';
       } else if (val.includes('damage')) {
         select.className = 'status-select pill-damage';
-      } else {
+      } else if (val.includes('incident')) {
         select.className = 'status-select pill-warning';
+      } else {
+        select.className = 'status-select pill-caution';
       }
       calculateIncidents();
       autoSave();
@@ -1890,13 +1922,18 @@
     function addIncidentRow() {
       const tbody = document.querySelector('#incidentTable tbody');
       const tr = document.createElement('tr');
+      const year = new Date().getFullYear();
       tr.innerHTML = `
-        <td><strong style="color:var(--dp-navy);" contenteditable="true">--/2026</strong></td>
+        <td><strong style="color:var(--dp-navy);" contenteditable="true">--/${year}</strong></td>
         <td>
           <select class="status-select pill-alert" onchange="updateIncidentStyle(this)">
             <option value="Security Notice" selected>Security Notice</option>
             <option value="Near Miss">Near Miss</option>
             <option value="Damage">Damage</option>
+            <option value="Incident">Incident</option>
+            <option value="Theft Case">Theft Case</option>
+            <option value="Bribery Case">Bribery Case</option>
+            <option value="Container Breach">Container Breach</option>
           </select>
         </td>
         <td contenteditable="true">Enter incident summary...</td>
@@ -2231,6 +2268,10 @@
                   <option value="Security Notice" ${inc.type === 'Security Notice' ? 'selected' : ''}>Security Notice</option>
                   <option value="Near Miss" ${inc.type === 'Near Miss' ? 'selected' : ''}>Near Miss</option>
                   <option value="Damage" ${inc.type === 'Damage' ? 'selected' : ''}>Damage</option>
+                  <option value="Incident" ${inc.type === 'Incident' ? 'selected' : ''}>Incident</option>
+                  <option value="Theft Case" ${inc.type === 'Theft Case' ? 'selected' : ''}>Theft Case</option>
+                  <option value="Bribery Case" ${inc.type === 'Bribery Case' ? 'selected' : ''}>Bribery Case</option>
+                  <option value="Container Breach" ${inc.type === 'Container Breach' ? 'selected' : ''}>Container Breach</option>
                 </select>
               </td>
               <td contenteditable="true">${inc.desc}</td>
