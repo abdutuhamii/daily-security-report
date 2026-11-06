@@ -29,42 +29,46 @@
     body {
       background-color: #eef2f6;
       color: var(--text-main);
-      padding: 16px;
-      font-size: 12px;
+      padding: 14px;
+      font-size: 11.5px;
     }
 
     /* TOP ACTION TOOLBAR (Hidden when printed) */
     .user-toolbar {
       max-width: 1200px;
-      margin: 0 auto 14px auto;
+      margin: 0 auto 12px auto;
       background: #ffffff;
-      padding: 10px 18px;
+      padding: 9px 16px;
       border-radius: 8px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
       border: 1px solid var(--dp-border);
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .toolbar-left {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 12px;
+      gap: 10px;
+      font-size: 11.5px;
       font-weight: 600;
       color: var(--dp-navy);
+      flex-wrap: wrap;
     }
 
-    .shift-select {
-      padding: 5px 10px;
+    .toolbar-duty-select {
+      padding: 4px 8px;
       border-radius: 6px;
       border: 1.5px solid var(--dp-navy);
       background: #ffffff;
       font-weight: 700;
-      font-size: 12px;
+      font-size: 11px;
       color: var(--dp-navy);
       cursor: pointer;
+      outline: none;
     }
 
     .toolbar-right {
@@ -88,8 +92,8 @@
       background: #ffffff;
       color: var(--dp-coral);
       border: 1.5px solid var(--dp-coral);
-      padding: 6px 14px;
-      font-size: 12px;
+      padding: 5px 12px;
+      font-size: 11px;
       font-weight: 700;
       border-radius: 6px;
       cursor: pointer;
@@ -107,24 +111,18 @@
       background: var(--dp-navy);
       color: #ffffff;
       border: none;
-      padding: 7px 16px;
-      font-size: 12px;
+      padding: 6px 14px;
+      font-size: 11px;
       font-weight: 700;
       border-radius: 6px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .btn-print:hover {
       background: #1e293b;
-    }
-
-    .helper-tip {
-      font-size: 11px;
-      color: var(--text-muted);
-      font-style: italic;
     }
 
     /* DASHBOARD CANVAS */
@@ -134,9 +132,15 @@
       background: #ffffff;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(14, 22, 38, 0.08);
-      padding: 16px 20px;
+      padding: 12px 18px 16px 18px;
       border-top: 5px solid var(--dp-navy);
       position: relative;
+    }
+
+    /* TOP CENTERED CONFIDENTIAL BANNER */
+    .top-confidential-bar {
+      text-align: center;
+      margin-bottom: 8px;
     }
 
     /* EDITABLE FIELDS STYLING */
@@ -161,7 +165,7 @@
       width: 100%;
       border: 1px solid transparent;
       background: transparent;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 600;
       font-family: inherit;
       color: var(--text-main);
@@ -182,9 +186,9 @@
       box-shadow: 0 0 0 2px var(--dp-mint);
     }
 
-    /* PERFECTLY CENTERED TIME INPUTS */
+    /* TIME INPUTS */
     .time-input {
-      font-size: 10.5px;
+      font-size: 10px;
       cursor: pointer;
       display: inline-block;
       margin: 0 auto;
@@ -201,7 +205,7 @@
       text-align: center;
     }
 
-    /* HIDE NUMBER SPINNER ARROWS */
+    /* HIDE NUMBER SPINNERS */
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
       -webkit-appearance: none;
@@ -219,64 +223,96 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 2px solid var(--dp-light-silver);
-      padding-bottom: 10px;
-      margin-bottom: 12px;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+      gap: 12px;
     }
 
     .brand-section {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+      flex-shrink: 0;
     }
 
     .brand-logo-img {
-      height: 46px;
+      height: 44px;
       width: auto;
       object-fit: contain;
       display: block;
     }
 
     .header-divider {
-      height: 36px;
+      height: 38px;
       width: 2px;
       background: var(--dp-border);
     }
 
     .brand-title h2 {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 800;
       color: var(--dp-navy);
       letter-spacing: 0.5px;
       line-height: 1.1;
     }
 
-    .brand-title p {
-      font-size: 11px;
+    /* BRAND SUBTITLE 3-COLUMN METADATA FORMAT */
+    .brand-doc-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 3px;
+    }
+
+    .brand-meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-meta-item .meta-top {
+      font-size: 10px;
       font-weight: 600;
       color: var(--dp-coral);
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 2px;
+      letter-spacing: 0.6px;
+      line-height: 1.2;
     }
 
+    .brand-meta-item .meta-sub {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--dp-navy);
+      letter-spacing: 0.4px;
+      line-height: 1.2;
+      margin-top: 1px;
+    }
+
+    .brand-meta-divider {
+      width: 1px;
+      height: 22px;
+      background: var(--dp-border);
+    }
+
+    /* HEADER BADGES */
     .meta-tags {
       display: flex;
       gap: 6px;
-      flex-wrap: wrap;
       align-items: center;
+      justify-content: flex-end;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 4px 9px;
-      border-radius: 5px;
-      font-size: 10.5px;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 9.5px;
       font-weight: 600;
       background: var(--dp-light-silver);
       color: var(--dp-navy);
       border: 1px solid var(--dp-border);
+      white-space: nowrap;
     }
 
     .badge-date {
@@ -299,23 +335,56 @@
       background: #ecfdf5;
       color: #065f46;
       border-color: #a7f3d0;
+      transition: background 0.2s, color 0.2s;
     }
 
-    /* KPI METRICS */
+    .badge-shift.shift-night {
+      background: #0e1626;
+      color: #ffffff;
+      border-color: #0e1626;
+    }
+
+    .duty-select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: inherit;
+      cursor: pointer;
+      outline: none;
+      padding: 1px 11px 1px 2px;
+      background-position: right 1px center;
+      background-repeat: no-repeat;
+      background-size: 6px 4px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 5 5-5z' fill='%23065f46'/%3E%3C/svg%3E");
+    }
+
+    .badge-shift.shift-night .duty-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 5 5-5z' fill='%23ffffff'/%3E%3C/svg%3E");
+    }
+
+    /* 5 KPI METRICS */
     .kpi-row {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-bottom: 12px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-bottom: 10px;
     }
 
     .kpi-card {
       background: #ffffff;
       border: 1px solid var(--dp-border);
-      border-radius: 8px;
-      padding: 9px 12px;
+      border-radius: 7px;
+      padding: 7px 10px;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .kpi-card::before {
@@ -327,24 +396,14 @@
       height: 100%;
     }
 
-    .kpi-mint::before {
-      background: var(--dp-mint);
-    }
-
-    .kpi-coral::before {
-      background: var(--dp-coral);
-    }
-
-    .kpi-navy::before {
-      background: var(--dp-navy);
-    }
-
-    .kpi-silver::before {
-      background: var(--dp-silver);
-    }
+    .kpi-mint::before { background: var(--dp-mint); }
+    .kpi-coral::before { background: var(--dp-coral); }
+    .kpi-navy::before { background: var(--dp-navy); }
+    .kpi-purple::before { background: var(--dp-purple); }
+    .kpi-silver::before { background: var(--dp-silver); }
 
     .kpi-title {
-      font-size: 10px;
+      font-size: 9.5px;
       color: var(--text-muted);
       text-transform: uppercase;
       font-weight: 700;
@@ -352,40 +411,66 @@
     }
 
     .kpi-value {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 800;
       color: var(--dp-navy);
       line-height: 1.1;
     }
 
     .kpi-sub {
-      font-size: 10px;
+      font-size: 9.5px;
       color: var(--text-muted);
       margin-top: 2px;
+    }
+
+    /* STRUCTURED 2-COLUMN GRID */
+    .inc-sub-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1.5px 4px;
+      margin-top: 3px;
+      font-size: 8.5px;
+      color: var(--text-muted);
+      line-height: 1.25;
+    }
+
+    .inc-sub-item {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .inc-sub-item span.cnt {
+      color: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+      margin-right: 2.5px;
     }
 
     /* MAIN GRID */
     .grid-2col {
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 12px;
-      margin-bottom: 12px;
+      grid-template-columns: 0.40fr 0.85fr;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
     .card {
       border: 1px solid var(--dp-border);
-      border-radius: 8px;
-      padding: 10px 12px;
+      border-radius: 7px;
+      padding: 9px 11px;
       background: #fff;
     }
 
     .card-header {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       color: var(--dp-navy);
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -397,12 +482,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 4px;
+      margin-top: 3px;
       margin-bottom: 3px;
     }
 
     .sub-section-title {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 700;
       color: var(--dp-navy);
       text-transform: uppercase;
@@ -413,7 +498,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 11px;
+      font-size: 10.5px;
     }
 
     th {
@@ -421,12 +506,12 @@
       color: var(--dp-navy);
       font-weight: 600;
       text-align: left;
-      padding: 3px 5px;
-      font-size: 10px;
+      padding: 2.5px 4px;
+      font-size: 9.5px;
     }
 
     td {
-      padding: 2.5px 5px;
+      padding: 2px 4px;
       border-bottom: 1px solid var(--dp-border);
       color: var(--text-main);
       vertical-align: middle;
@@ -439,12 +524,12 @@
 
     /* BUTTONS: ADD & DELETE */
     .add-row-btn {
-      font-size: 9.5px;
+      font-size: 9px;
       font-weight: 700;
       color: var(--dp-navy);
       background: var(--dp-light-silver);
       border: 1px solid var(--dp-border);
-      padding: 1px 6px;
+      padding: 1px 5px;
       border-radius: 3px;
       cursor: pointer;
       display: inline-flex;
@@ -459,11 +544,13 @@
     }
 
     .action-col {
-      width: 24px;
-      text-align: center;
+      width: 28px !important;
+      min-width: 28px !important;
+      text-align: center !important;
       padding: 1px !important;
     }
 
+    /* RED OUTLINE TRASH BUTTON */
     .btn-delete {
       background: transparent;
       border: none;
@@ -473,7 +560,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.15s;
+      transition: transform 0.15s, background 0.15s;
     }
 
     .btn-delete:hover {
@@ -482,23 +569,23 @@
     }
 
     .trash-svg {
-      width: 13px;
-      height: 13px;
+      width: 14px;
+      height: 14px;
       stroke: #e03131;
       display: block;
     }
 
     /* DRAGGABLE ROWS STYLING */
     .drag-col {
-      width: 20px;
+      width: 18px;
       text-align: center;
-      padding: 0 2px !important;
+      padding: 0 1px !important;
     }
 
     .drag-handle {
       cursor: grab;
       color: #94a3b8;
-      font-size: 13px;
+      font-size: 11px;
       user-select: none;
       display: inline-block;
       transition: color 0.15s, transform 0.15s;
@@ -524,17 +611,17 @@
       appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
-      padding: 2px 14px 2px 6px;
+      padding: 2px 13px 2px 5px;
       border-radius: 3px;
-      font-size: 9.5px;
+      font-size: 9px;
       font-weight: 700;
       text-transform: uppercase;
       border: 1px solid transparent;
       cursor: pointer;
       outline: none;
-      background-position: right 4px center;
+      background-position: right 3px center;
       background-repeat: no-repeat;
-      background-size: 7px 4px;
+      background-size: 6px 4px;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 5 5-5z' fill='%23475569'/%3E%3C/svg%3E");
     }
 
@@ -542,66 +629,35 @@
     .status-pill {
       display: inline-flex;
       align-items: center;
-      gap: 3px;
-      padding: 1px 6px;
+      gap: 2px;
+      padding: 1px 5px;
       border-radius: 3px;
-      font-size: 9.5px;
+      font-size: 8.5px;
       font-weight: 700;
       text-transform: uppercase;
     }
 
-    .pill-active {
-      background-color: rgba(0, 214, 143, 0.16);
-      color: #00875a;
-    }
-
-    .pill-neutral {
-      background-color: #f1f5f9;
-      color: #475569;
-    }
-
-    /* Critical Security & Legal issues */
-    .pill-alert {
-      background-color: rgba(255, 59, 105, 0.12);
-      color: var(--dp-coral);
-      border: 1px solid rgba(255, 59, 105, 0.2);
-    }
-
-    /* Physical Damage & Cargo Breaches */
-    .pill-damage {
-      background-color: rgba(124, 58, 237, 0.12);
-      color: var(--dp-purple);
-      border: 1px solid rgba(124, 58, 237, 0.2);
-    }
-
-    /* Standard General Incidents */
-    .pill-warning {
-      background-color: rgba(234, 88, 12, 0.12);
-      color: #ea580c;
-      border: 1px solid rgba(234, 88, 12, 0.2);
-    }
-
-    /* Minor / Preventative Notices */
-    .pill-caution {
-      background-color: rgba(217, 119, 6, 0.12);
-      color: #d97706;
-      border: 1px solid rgba(217, 119, 6, 0.2);
-    }
+    .pill-active { background-color: rgba(0, 214, 143, 0.16); color: #00875a; }
+    .pill-neutral { background-color: #f1f5f9; color: #475569; }
+    .pill-alert { background-color: rgba(255, 59, 105, 0.12); color: var(--dp-coral); border: 1px solid rgba(255, 59, 105, 0.2); }
+    .pill-damage { background-color: rgba(124, 58, 237, 0.12); color: var(--dp-purple); border: 1px solid rgba(124, 58, 237, 0.2); }
+    .pill-warning { background-color: rgba(234, 88, 12, 0.12); color: #ea580c; border: 1px solid rgba(234, 88, 12, 0.2); }
+    .pill-caution { background-color: rgba(217, 119, 6, 0.12); color: #d97706; border: 1px solid rgba(217, 119, 6, 0.2); }
 
     /* SPLIT BREAKDOWN PILLS */
     .split-detail {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 4px;
-      margin-top: 3px;
+      gap: 3px;
+      margin-top: 2px;
     }
 
     .split-in-input {
-      width: 28px;
-      height: 16px;
+      width: 26px;
+      height: 15px;
       padding: 0;
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 800;
       text-align: center;
       background: #ffffff;
@@ -621,14 +677,16 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 4px;
-      padding: 2px 0;
+      gap: 3px;
+      padding: 1px 0;
+      margin: 0 auto;
+      width: 100%;
     }
 
     .photo-items-wrap {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: 3px;
       align-items: center;
       justify-content: center;
     }
@@ -639,8 +697,8 @@
     }
 
     .incident-thumb {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       object-fit: cover;
       border-radius: 4px;
       border: 1.5px solid #cbd5e1;
@@ -653,43 +711,43 @@
 
     .incident-thumb:hover {
       transform: scale(1.15);
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
       border-color: var(--dp-navy);
     }
 
     .btn-remove-photo {
       position: absolute;
-      top: -4px;
-      right: -4px;
-      width: 14px;
-      height: 14px;
+      top: -3px;
+      right: -3px;
+      width: 13px;
+      height: 13px;
       background: var(--dp-coral);
       color: #ffffff;
       border: none;
       border-radius: 50%;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 800;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       line-height: 1;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     }
 
     .btn-attach-photo {
       cursor: pointer;
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: 700;
       color: var(--dp-navy);
       background: var(--dp-light-silver);
       border: 1px solid var(--dp-border);
-      padding: 2px 5px;
+      padding: 2px 4px;
       border-radius: 3px;
       display: inline-flex;
       align-items: center;
       gap: 2px;
       transition: all 0.15s;
+      margin: 0 auto;
     }
 
     .btn-attach-photo:hover {
@@ -701,26 +759,26 @@
     .system-pills {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 6px;
-      margin-top: 4px;
+      gap: 5px;
+      margin-top: 3px;
     }
 
     .system-item {
       background: var(--dp-light-silver);
-      border-radius: 5px;
-      padding: 6px;
+      border-radius: 4px;
+      padding: 5px;
       text-align: center;
     }
 
     .system-item .val {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 800;
       color: var(--dp-navy);
       line-height: 1;
     }
 
     .system-item .lbl {
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: 600;
       color: var(--text-muted);
       text-transform: uppercase;
@@ -732,25 +790,108 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 10px;
-      padding-top: 8px;
+      margin-top: 8px;
+      padding-top: 6px;
       border-top: 1px dashed var(--dp-border);
-      font-size: 10px;
+      font-size: 9px;
       color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .footer-duty-summary {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--dp-navy);
     }
 
     .signature-area {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       align-items: center;
       font-weight: 600;
       color: var(--dp-navy);
     }
 
     .sign-line {
-      width: 160px;
+      width: 140px;
       border-bottom: 1.5px solid var(--dp-navy);
-      min-height: 14px;
+      min-height: 13px;
+    }
+
+    /* STARTING SERIALS MODAL */
+    .serial-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(14, 22, 38, 0.7);
+      z-index: 999999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .serial-modal-content {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 16px 20px;
+      width: 330px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border-top: 4px solid var(--dp-navy);
+    }
+
+    .serial-modal-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--dp-navy);
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .serial-input-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .serial-input-box {
+      width: 65px;
+      padding: 3px 6px;
+      border-radius: 4px;
+      border: 1px solid var(--dp-border);
+      font-weight: 700;
+      text-align: center;
+      outline: none;
+    }
+
+    .serial-input-box:focus {
+      border-color: var(--dp-mint);
+    }
+
+    .btn-apply-serials {
+      width: 100%;
+      background: var(--dp-navy);
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      padding: 7px;
+      font-weight: 700;
+      font-size: 11px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn-apply-serials:hover {
+      background: #1e293b;
     }
 
     /* STRICT ONE-PAGE PRINT RULES & HIGH-DEFINITION PDF PRINT */
@@ -774,7 +915,7 @@
       .dashboard-page {
         max-width: 100% !important;
         margin: 0 auto !important;
-        padding: 6mm 10mm !important;
+        padding: 5mm 8mm !important;
         box-shadow: none !important;
         border: none !important;
         border-top: 5px solid var(--dp-navy) !important;
@@ -788,14 +929,13 @@
       .btn-delete,
       .btn-attach-photo,
       .btn-remove-photo,
-      .save-indicator {
+      .save-indicator,
+      .serial-modal {
         display: none !important;
       }
 
       [contenteditable="true"]:hover,
-      [contenteditable="true"]:focus,
-      .cell-input:hover,
-      .cell-input:focus {
+      [contenteditable="true"]:focus {
         background: transparent !important;
         box-shadow: none !important;
       }
@@ -811,10 +951,12 @@
         background: transparent !important;
       }
 
-      .status-select {
+      .status-select,
+      .duty-select {
         background-image: none !important;
-        padding: 1px 4px !important;
+        padding: 1px 2px !important;
         border: none !important;
+        color: #000000 !important;
       }
 
       /* Crisp, Large, High-Contrast Evidence Photos in PDF */
@@ -860,13 +1002,39 @@
   <!-- TOP TOOLBAR -->
   <div class="user-toolbar">
     <div class="toolbar-left">
-      <span>Shift:</span>
-      <select class="shift-select" id="shiftSelector" onchange="updateShift(this.value); autoSave();">
-        <option value="Morning" selected>☀️ Morning Shift (08:00 - 20:00)</option>
-        <option value="Night">🌙 Night Shift (20:00 - 08:00)</option>
+      <span>Supervisor:</span>
+      <select class="toolbar-duty-select" id="tbSupervisor" onchange="syncDuty('supervisor', this.value); autoSave();">
+        <option value="Bassem Abbass" selected>Bassem Abbass</option>
+        <option value="Mohamed Hassan">Mohamed Hassan</option>
+        <option value="Adel Nabil">Adel Nabil</option>
+        <option value="Mohamed Mansi">Mohamed Mansi</option>
       </select>
-      <span class="helper-tip">&bull; Strictly formatted to fit 1 A4 Page.</span>
+
+      <span>Operator 1:</span>
+      <select class="toolbar-duty-select" id="tbOp1" onchange="syncDuty('op1', this.value); autoSave();">
+        <option value="Abdulrahman Al-Tuhami" selected>Abdulrahman Al-Tuhami</option>
+        <option value="Moataz Sabri">Moataz Sabri</option>
+        <option value="Mohamed Ibrahim">Mohamed Ibrahim</option>
+        <option value="Hazem Abdulkareem">Hazem Abdulkareem</option>
+        <option value="Youssef Altayeb">Youssef Altayeb</option>
+        <option value="Mahmoud Magdy">Mahmoud Magdy</option>
+        <option value="Ahmed Twancy">Ahmed Twancy</option>
+        <option value="Youssef Esmat">Youssef Esmat</option>
+      </select>
+
+      <span>Operator 2:</span>
+      <select class="toolbar-duty-select" id="tbOp2" onchange="syncDuty('op2', this.value); autoSave();">
+        <option value="Abdulrahman Al-Tuhami">Abdulrahman Al-Tuhami</option>
+        <option value="Moataz Sabri" selected>Moataz Sabri</option>
+        <option value="Mohamed Ibrahim">Mohamed Ibrahim</option>
+        <option value="Hazem Abdulkareem">Hazem Abdulkareem</option>
+        <option value="Youssef Altayeb">Youssef Altayeb</option>
+        <option value="Mahmoud Magdy">Mahmoud Magdy</option>
+        <option value="Ahmed Twancy">Ahmed Twancy</option>
+        <option value="Youssef Esmat">Youssef Esmat</option>
+      </select>
     </div>
+
     <div class="toolbar-right">
       <span class="save-indicator" id="saveIndicator">💾 Saved</span>
       <button class="btn-new" onclick="resetReport()">🔄 New Report</button>
@@ -877,6 +1045,11 @@
   <!-- DASHBOARD CANVAS -->
   <div class="dashboard-page">
 
+    <!-- TOP CENTERED CONFIDENTIAL CLASSIFICATION BANNER -->
+    <div class="top-confidential-bar">
+      <span class="badge badge-confidential" style="font-weight: 800; letter-spacing: 1px; padding: 2.5px 14px;">CONFIDENTIAL</span>
+    </div>
+
     <!-- HEADER -->
     <div class="header-bar">
       <div class="brand-section">
@@ -885,339 +1058,231 @@
         <div class="header-divider"></div>
         <div class="brand-title">
           <h2>SECURITY DEPARTMENT</h2>
-          <p contenteditable="true">Daily Security Report &bull; Logistics Park</p>
+          <!-- DUAL-COLUMN DOCUMENT CONTROL METADATA -->
+          <div class="brand-doc-meta">
+            <div class="brand-meta-item">
+              <span class="meta-top" contenteditable="true">Daily Security Report</span>
+              <span class="meta-sub" contenteditable="true" id="versionBadge">Ver. 1.0</span>
+            </div>
+            <div class="brand-meta-divider"></div>
+            <div class="brand-meta-item">
+              <span class="meta-top" contenteditable="true">Logistics Park</span>
+              <span class="meta-sub" contenteditable="true" id="docCodeBadge">LP-SMP 10-F 01</span>
+            </div>
+            <div class="brand-meta-divider"></div>
+            <div class="brand-meta-item">
+              <span class="meta-top" contenteditable="true">Issue Date</span>
+              <span class="meta-sub" contenteditable="true" id="issueDateBadge">04/11/2026</span>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="meta-tags">
         <span class="badge badge-shift" id="shiftBadgeDisplay">
-          ☀️ <strong>Shift:</strong> <span contenteditable="true">Morning Shift (08:00 - 20:00)</span>
+          <span id="shiftIcon">☀️</span> <strong>Shift:</strong>
+          <select class="duty-select" id="shiftSelect" onchange="updateShift(this.value); autoSave();">
+            <option value="Morning" selected>Morning Shift (08:00 - 20:00)</option>
+            <option value="Night">Night Shift (20:00 - 08:00)</option>
+          </select>
         </span>
 
-        <!-- CALENDAR DATE PICKER BADGE (AUTO TODAY) -->
         <span class="badge badge-date" onclick="openDatePicker()" title="Click to open calendar">
-          📅 <strong>Date:</strong> <span id="dateDisplay">--/--/----</span>
-          <input type="date" id="calendarInput"
+          📅 <strong>Date:</strong> <span id="dateDisplay">04/11/2026 (Wednesday)</span>
+          <input type="date" id="calendarInput" value="2026-11-04"
             style="position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;"
             onchange="updateFormattedDate(this.value); autoSave();">
         </span>
-
-        <span class="badge badge-confidential">CONFIDENTIAL</span>
       </div>
     </div>
 
-    <!-- KPI SUMMARY CARDS -->
+    <!-- 5 KPI METRICS -->
     <div class="kpi-row">
-      <!-- SECURITY TEAM KPI -->
+      <!-- 1. SECURITY TEAM KPI -->
       <div class="kpi-card kpi-mint">
         <div class="kpi-title">Security Team</div>
         <div class="kpi-value"><span id="kpiSecAttended">0</span> <span
-            style="font-size:11px; font-weight:500;">Attended</span></div>
+            style="font-size:10.5px; font-weight:500;">Attended</span></div>
         <div class="kpi-sub" id="kpiSecSub">0% Attendance &bull; 0 DPW + 0 Golden</div>
       </div>
 
-      <!-- GATE TRANSACTIONS KPI (AUTO COMPUTED) -->
+      <!-- 2. MANPOWER KPI -->
+      <div class="kpi-card kpi-purple">
+        <div class="kpi-title">Manpower</div>
+        <div class="kpi-value"><span id="kpiManpowerTotal">0</span> <span
+            style="font-size:10.5px; font-weight:500;">Personnel</span></div>
+        <div class="kpi-sub" id="kpiManpowerSub">0 In-Source &bull; 0 Outsource</div>
+      </div>
+
+      <!-- 3. GATE TRANSACTIONS KPI -->
       <div class="kpi-card kpi-navy">
         <div class="kpi-title">Gate Transactions</div>
         <div class="kpi-value" id="kpiGateValue">0 Trucks</div>
         <div class="kpi-sub" id="kpiGateSub">0 Gated Out &bull; 0 On site</div>
       </div>
 
-      <!-- INCIDENT REPORTS KPI (AUTO COMPUTED - PLAIN NUMERICAL STYLE) -->
+      <!-- 4. INCIDENT REPORTS KPI -->
       <div class="kpi-card kpi-coral">
         <div class="kpi-title">Incident Reports</div>
         <div class="kpi-value" id="kpiIncidentValue">0 Reports</div>
-        <div class="kpi-sub" id="kpiIncidentSub1">0 Security notice &bull; 0 Near Miss &bull; 0 Damage &bull; 0 Incident
+        <div class="inc-sub-grid">
+          <span class="inc-sub-item"><span class="cnt" id="incCntNotice">0</span>&nbsp;Security&nbsp;Notice</span>
+          <span class="inc-sub-item"><span class="cnt" id="incCntTheft">0</span>&nbsp;Theft&nbsp;Case</span>
+          <span class="inc-sub-item"><span class="cnt" id="incCntNearMiss">0</span>&nbsp;Near&nbsp;Miss</span>
+          <span class="inc-sub-item"><span class="cnt" id="incCntBribery">0</span>&nbsp;Bribery&nbsp;Case</span>
+          <span class="inc-sub-item"><span class="cnt" id="incCntDamage">0</span>&nbsp;Damage</span>
+          <span class="inc-sub-item"><span class="cnt" id="incCntBreach">0</span>&nbsp;Container&nbsp;Breach</span>
+          <span class="inc-sub-item"><span class="cnt" id="incCntIncident">0</span>&nbsp;Incident</span>
         </div>
-        <div class="kpi-sub" id="kpiIncidentSub2">0 Theft Case &bull; 0 Bribery Case &bull; 0 Container Breach</div>
       </div>
 
+      <!-- 5. PERIMETER & SYSTEMS KPI -->
       <div class="kpi-card kpi-silver">
         <div class="kpi-title">Perimeter & Systems</div>
         <div class="kpi-value" contenteditable="true" id="kpiPerimeterVal">100%</div>
-        <div class="kpi-sub" contenteditable="true" id="kpiPerimeterSub">151 CCTV Online &bull; 10 Tetra Radios</div>
+        <div class="kpi-sub" contenteditable="true" id="kpiPerimeterSub">153 CCTV &bull; 10 Tetra</div>
       </div>
     </div>
 
     <!-- MIDDLE TWO-COLUMN SECTION -->
     <div class="grid-2col">
 
-      <!-- 1. PERSONNEL ATTENDANCE -->
-      <div class="card">
-        <div class="card-header">
-          <span>Personnel Attendance</span>
+      <!-- LEFT COLUMN: SECURITY TEAM TABLE & MANPOWER TABLE -->
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+
+        <!-- 1. SECURITY TEAM TABLE -->
+        <div class="card">
+          <div class="card-header">
+            <span>Security Team Attendance</span>
+            <button class="add-row-btn" onclick="addSecurityRow()">+ Add</button>
+          </div>
+
+          <table id="securityTable">
+            <thead>
+              <tr>
+                <th>Security Force / Role</th>
+                <th style="width: 44px; text-align: center;">Total</th>
+                <th style="width: 48px; text-align: center;">Attended</th>
+                <th style="width: 50px; text-align: center;">Off/Leave</th>
+                <th style="width: 52px; text-align: center;">Rate %</th>
+                <th class="action-col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="att-sec-row preload-row" id="sec-row-dpw">
+                <td contenteditable="true"><strong>Security (DPW)</strong></td>
+                <td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input sec-tot" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td>
+                <td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input sec-att" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td>
+                <td class="sec-leave" style="text-align: center; color: var(--text-muted);">0</td>
+                <td class="sec-rate-cell" style="text-align: center;"><span class="status-pill pill-alert">0%</span></td>
+                <td class="action-col"></td>
+              </tr>
+              <tr class="att-sec-row preload-row" id="sec-row-golden">
+                <td contenteditable="true"><strong>Golden Force</strong></td>
+                <td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input sec-tot" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td>
+                <td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input sec-att" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td>
+                <td class="sec-leave" style="text-align: center; color: var(--text-muted);">0</td>
+                <td class="sec-rate-cell" style="text-align: center;"><span class="status-pill pill-alert">0%</span></td>
+                <td class="action-col"></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr style="background: var(--dp-light-silver); font-weight: 800; border-top: 1.5px solid var(--dp-border);">
+                <td><strong>Security Total</strong></td>
+                <td id="secStaffTotal" style="text-align: center; color: var(--dp-navy);">0</td>
+                <td id="secAttTotal" style="text-align: center; color: var(--dp-navy);">0</td>
+                <td id="secLeaveTotal" style="text-align: center; color: var(--text-muted);">0</td>
+                <td id="secRateTotal" style="text-align: center;"><span class="status-pill pill-alert">0%</span></td>
+                <td class="action-col"></td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
 
-        <!-- IN-SOURCE TABLE -->
-        <div class="sub-section-header">
-          <span class="sub-section-title">In-Source (DP World)</span>
-          <button class="add-row-btn" onclick="addInsourceRow()">+ Add</button>
-        </div>
-        <table id="insourceTable" style="margin-bottom: 8px;">
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th style="width: 40px; text-align: center;">Total</th>
-              <th style="width: 48px; text-align: center;">Attended</th>
-              <th style="width: 52px; text-align: center;">Off/Leave</th>
-              <th style="width: 55px; text-align: center;">Rate %</th>
-              <th class="action-col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="att-row preload-att-row" id="sec-row-dpw">
-              <td contenteditable="true">Security</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Operation - Empty Container Yard</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Cash Clerk</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Operation - Warehouse</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Finance</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Facility</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Procurement</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Administration</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Human Resources</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Quality Assurance</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Safety</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Customs</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Information Technology</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Commercial</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Business Development</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr style="background: var(--dp-light-silver); font-weight: 800; border-top: 1.5px solid var(--dp-border);">
-              <td><strong>In-Source Total</strong></td>
-              <td id="inTotalStaff" style="text-align: center; color: var(--dp-navy);">0</td>
-              <td id="inTotalAttended" style="text-align: center; color: var(--dp-navy);">0</td>
-              <td id="inTotalLeave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td id="inTotalRate" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-          </tfoot>
-        </table>
+        <!-- 2. MANPOWER TABLE -->
+        <div class="card">
+          <div class="card-header">
+            <span>Manpower</span>
+          </div>
 
-        <!-- OUTSOURCE TABLE -->
-        <div class="sub-section-header">
-          <span class="sub-section-title">Outsource</span>
-          <button class="add-row-btn" onclick="addOutsourceRow()">+ Add</button>
+          <!-- IN-SOURCE SECTION -->
+          <div class="sub-section-header">
+            <span class="sub-section-title">In-Source Departments</span>
+            <button class="add-row-btn" onclick="addManpowerInsourceRow()">+ Add</button>
+          </div>
+          <table id="manpowerInsourceTable" style="margin-bottom: 6px;">
+            <thead>
+              <tr>
+                <th>Department</th>
+                <th style="width: 55px; text-align: center;">Total</th>
+                <th class="action-col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Op - Empty Container Yard</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Cash Clerk</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Op - Warehouse</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Finance</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Facility</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Procurement</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Administration</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Human Resources</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Quality Assurance</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Safety</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Customs</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Information Technology</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Commercial</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-in-row preload-row"><td contenteditable="true">Business Development</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+            </tbody>
+            <tfoot>
+              <tr style="background: var(--dp-light-silver); font-weight: 700; border-top: 1px solid var(--dp-border);">
+                <td><strong>In-Source Total</strong></td>
+                <td id="mpInsourceTotal" style="text-align: center; color: var(--dp-navy);">0</td>
+                <td class="action-col"></td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <!-- OUTSOURCE SECTION -->
+          <div class="sub-section-header">
+            <span class="sub-section-title">Outsource Contractors</span>
+            <button class="add-row-btn" onclick="addManpowerOutsourceRow()">+ Add</button>
+          </div>
+          <table id="manpowerOutsourceTable">
+            <thead>
+              <tr>
+                <th>Contractor</th>
+                <th style="width: 55px; text-align: center;">Total</th>
+                <th class="action-col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="mp-out-row preload-row"><td contenteditable="true">Queen Service</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-out-row preload-row"><td contenteditable="true">Premier</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-out-row preload-row"><td contenteditable="true">Arico</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+              <tr class="mp-out-row preload-row"><td contenteditable="true">ADED</td><td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td><td class="action-col"></td></tr>
+            </tbody>
+            <tfoot>
+              <tr style="background: var(--dp-light-silver); font-weight: 700; border-top: 1px solid var(--dp-border);">
+                <td><strong>Outsource Total</strong></td>
+                <td id="mpOutsourceTotal" style="text-align: center; color: var(--dp-navy);">0</td>
+                <td class="action-col"></td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
-        <table id="outsourceTable">
-          <thead>
-            <tr>
-              <th>Contractor</th>
-              <th style="width: 40px; text-align: center;">Total</th>
-              <th style="width: 48px; text-align: center;">Attended</th>
-              <th style="width: 52px; text-align: center;">Off/Leave</th>
-              <th style="width: 55px; text-align: center;">Rate %</th>
-              <th class="action-col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="att-row preload-att-row" id="sec-row-golden">
-              <td contenteditable="true">Golden Force</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Queen Service</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Premier</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">Arico</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-            <tr class="att-row preload-att-row">
-              <td contenteditable="true">ADED</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()"
-                style="text-align: center; font-weight:600;">0</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr style="background: var(--dp-light-silver); font-weight: 800; border-top: 1.5px solid var(--dp-border);">
-              <td><strong>Outsource Total</strong></td>
-              <td id="outTotalStaff" style="text-align: center; color: var(--dp-navy);">0</td>
-              <td id="outTotalAttended" style="text-align: center; color: var(--dp-navy);">0</td>
-              <td id="outTotalLeave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td id="outTotalRate" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col"></td>
-            </tr>
-          </tfoot>
-        </table>
+
       </div>
 
       <!-- RIGHT COLUMN: GATE TRANSACTIONS + ASSETS + INCIDENT LOG -->
-      <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
 
         <!-- 2. HARDWARE & FACILITIES -->
         <div class="card">
           <div class="card-header">Surveillance, Assets & Facilities</div>
           <div class="system-pills">
             <div class="system-item">
-              <div class="val" contenteditable="true" id="sysCCTV">151</div>
+              <div class="val" contenteditable="true" id="sysCCTV">153</div>
               <div class="lbl">CCTV Cameras</div>
             </div>
             <div class="system-item">
@@ -1230,7 +1295,7 @@
             </div>
           </div>
           <div contenteditable="true" id="sysNotes"
-            style="margin-top: 6px; font-size: 10px; line-height: 1.4; color: var(--text-muted); background: var(--dp-light-silver); padding: 5px 8px; border-radius: 4px;">
+            style="margin-top: 5px; font-size: 9.5px; line-height: 1.35; color: var(--text-muted); background: var(--dp-light-silver); padding: 4px 7px; border-radius: 4px;">
             &bull; <strong>Warehouse Facilities:</strong> Admin buildings, locks & doors verified secured.<br>
             &bull; <strong>Sub-Stations:</strong> 2 Sub-stations inspected and operational.<br>
             &bull; <strong>Perimeter:</strong> Fencing and night lighting integrity confirmed.
@@ -1246,192 +1311,37 @@
           <table id="gateTable">
             <thead>
               <tr>
-                <th style="width: 85px; text-align: center;">Truck/Vehicle</th>
-                <th style="width: 70px; text-align: center;">Entry</th>
-                <th style="width: 70px; text-align: center;">Exit</th>
+                <th style="width: 75px; text-align: center;">Truck/Vehicle</th>
+                <th style="width: 65px; text-align: center;">Entry</th>
+                <th style="width: 65px; text-align: center;">Exit</th>
                 <th>Reason</th>
-                <th style="width: 105px; text-align: center;">Status</th>
-                <th class="action-col"></th>
+                <th style="width: 95px; text-align: center;">Status</th>
+                <th class="action-col" style="width: 28px; text-align: center;"></th>
               </tr>
             </thead>
             <tbody>
-              <!-- PRELOADED ROW 1: Empty Yard -->
-              <tr class="gate-preload-row">
-                <td style="text-align: center;">
-                  <input type="number" min="0" value="0" class="cell-input gate-truck-count"
-                    oninput="calculateGateTransactions()" />
-                </td>
-                <td style="text-align: center;">
-                  <input type="time" class="cell-input time-input" value="08:00" />
-                </td>
-                <td style="text-align: center;">
-                  <input type="time" class="cell-input time-input" value="" />
-                </td>
-                <td><strong>Empty Yard</strong></td>
-                <td style="text-align: center;">
-                  <select class="status-select pill-active" onchange="updateGateRowStatus(this)">
-                    <option value="On Site" selected>On Site</option>
-                    <option value="Gated Out">Gated Out</option>
-                    <option value="Split">Split</option>
-                  </select>
-                  <div class="split-detail" style="display: none;">
-                    <span class="status-pill pill-active" style="padding: 1px 4px;">
-                      <input type="number" min="0" value="0" class="split-in-input"
-                        oninput="calculateGateTransactions()" title="On Site" /> In
-                    </span>
-                    <span class="status-pill pill-neutral" style="padding: 1px 4px;">
-                      <span class="split-out-val">0</span> Out
-                    </span>
-                  </div>
-                </td>
-                <td class="action-col"></td>
-              </tr>
-
-              <!-- PRELOADED ROW 2: WH-A -->
-              <tr class="gate-preload-row">
-                <td style="text-align: center;">
-                  <input type="number" min="0" value="0" class="cell-input gate-truck-count"
-                    oninput="calculateGateTransactions()" />
-                </td>
-                <td style="text-align: center;">
-                  <input type="time" class="cell-input time-input" value="08:00" />
-                </td>
-                <td style="text-align: center;">
-                  <input type="time" class="cell-input time-input" value="" />
-                </td>
-                <td><strong>WH-A</strong></td>
-                <td style="text-align: center;">
-                  <select class="status-select pill-active" onchange="updateGateRowStatus(this)">
-                    <option value="On Site" selected>On Site</option>
-                    <option value="Gated Out">Gated Out</option>
-                    <option value="Split">Split</option>
-                  </select>
-                  <div class="split-detail" style="display: none;">
-                    <span class="status-pill pill-active" style="padding: 1px 4px;">
-                      <input type="number" min="0" value="0" class="split-in-input"
-                        oninput="calculateGateTransactions()" title="On Site" /> In
-                    </span>
-                    <span class="status-pill pill-neutral" style="padding: 1px 4px;">
-                      <span class="split-out-val">0</span> Out
-                    </span>
-                  </div>
-                </td>
-                <td class="action-col"></td>
-              </tr>
-
-              <!-- PRELOADED ROW 3: WH-B -->
-              <tr class="gate-preload-row">
-                <td style="text-align: center;">
-                  <input type="number" min="0" value="0" class="cell-input gate-truck-count"
-                    oninput="calculateGateTransactions()" />
-                </td>
-                <td style="text-align: center;">
-                  <input type="time" class="cell-input time-input" value="08:00" />
-                </td>
-                <td style="text-align: center;">
-                  <input type="time" class="cell-input time-input" value="" />
-                </td>
-                <td><strong>WH-B</strong></td>
-                <td style="text-align: center;">
-                  <select class="status-select pill-active" onchange="updateGateRowStatus(this)">
-                    <option value="On Site" selected>On Site</option>
-                    <option value="Gated Out">Gated Out</option>
-                    <option value="Split">Split</option>
-                  </select>
-                  <div class="split-detail" style="display: none;">
-                    <span class="status-pill pill-active" style="padding: 1px 4px;">
-                      <input type="number" min="0" value="0" class="split-in-input"
-                        oninput="calculateGateTransactions()" title="On Site" /> In
-                    </span>
-                    <span class="status-pill pill-neutral" style="padding: 1px 4px;">
-                      <span class="split-out-val">0</span> Out
-                    </span>
-                  </div>
-                </td>
-                <td class="action-col"></td>
-              </tr>
-
-              <!-- PRELOADED ROW 4: WH-C -->
-              <tr class="gate-preload-row">
-                <td style="text-align: center;">
-                  <input type="number" min="0" value="0" class="cell-input gate-truck-count"
-                    oninput="calculateGateTransactions()" />
-                </td>
-                <td style="text-align: center;">
-                  <input type="time" class="cell-input time-input" value="08:00" />
-                </td>
-                <td style="text-align: center;">
-                  <input type="time" class="cell-input time-input" value="" />
-                </td>
-                <td><strong>WH-C</strong></td>
-                <td style="text-align: center;">
-                  <select class="status-select pill-active" onchange="updateGateRowStatus(this)">
-                    <option value="On Site" selected>On Site</option>
-                    <option value="Gated Out">Gated Out</option>
-                    <option value="Split">Split</option>
-                  </select>
-                  <div class="split-detail" style="display: none;">
-                    <span class="status-pill pill-active" style="padding: 1px 4px;">
-                      <input type="number" min="0" value="0" class="split-in-input"
-                        oninput="calculateGateTransactions()" title="On Site" /> In
-                    </span>
-                    <span class="status-pill pill-neutral" style="padding: 1px 4px;">
-                      <span class="split-out-val">0</span> Out
-                    </span>
-                  </div>
-                </td>
-                <td class="action-col"></td>
-              </tr>
-
-              <!-- PRELOADED ROW 5: Hay Yard -->
-              <tr class="gate-preload-row">
-                <td style="text-align: center;">
-                  <input type="number" min="0" value="0" class="cell-input gate-truck-count"
-                    oninput="calculateGateTransactions()" />
-                </td>
-                <td style="text-align: center;">
-                  <input type="time" class="cell-input time-input" value="08:00" />
-                </td>
-                <td style="text-align: center;">
-                  <input type="time" class="cell-input time-input" value="" />
-                </td>
-                <td><strong>Hay Yard</strong></td>
-                <td style="text-align: center;">
-                  <select class="status-select pill-active" onchange="updateGateRowStatus(this)">
-                    <option value="On Site" selected>On Site</option>
-                    <option value="Gated Out">Gated Out</option>
-                    <option value="Split">Split</option>
-                  </select>
-                  <div class="split-detail" style="display: none;">
-                    <span class="status-pill pill-active" style="padding: 1px 4px;">
-                      <input type="number" min="0" value="0" class="split-in-input"
-                        oninput="calculateGateTransactions()" title="On Site" /> In
-                    </span>
-                    <span class="status-pill pill-neutral" style="padding: 1px 4px;">
-                      <span class="split-out-val">0</span> Out
-                    </span>
-                  </div>
-                </td>
-                <td class="action-col"></td>
-              </tr>
+              <!-- Preloads dynamically loaded/ensured by JS -->
             </tbody>
           </table>
         </div>
 
-        <!-- 4. INCIDENT LOG (HIGH-RES PHOTO GALLERY) -->
+        <!-- 4. INCIDENT LOG -->
         <div class="card">
           <div class="card-header">
             <span>Incident Log</span>
-            <button class="add-row-btn" onclick="addIncidentRow()">+ Add</button>
+            <div style="display:flex; gap:4px;">
+              <button class="add-row-btn" onclick="openSerialModal()" title="Configure starting serials">⚙️ Serials</button>
+              <button class="add-row-btn" onclick="addIncidentRow()">+ Add</button>
+            </div>
           </div>
           <table id="incidentTable">
             <thead>
               <tr>
-                <th style="width: 60px;">Serial</th>
+                <th style="width: 60px; text-align: center;">Serial</th>
                 <th style="width: 110px;">Classification</th>
                 <th>Description / Findings</th>
-                <th style="width: 120px; text-align: center;">Evidence</th>
-                <th class="action-col"></th>
+                <th style="width: 110px; text-align: center;">Evidence</th>
+                <th class="action-col" style="width: 28px; text-align: center;"></th>
               </tr>
             </thead>
             <tbody>
@@ -1443,7 +1353,7 @@
 
     </div>
 
-    <!-- 5. DAILY OPERATIONAL EVENTS TABLE (DRAGGABLE ROWS) -->
+    <!-- 5. DAILY OPERATIONAL EVENTS TABLE -->
     <div class="card">
       <div class="card-header">
         <span>Daily Operational Events</span>
@@ -1453,11 +1363,11 @@
         <thead>
           <tr>
             <th class="drag-col" title="Drag to reorder"></th>
-            <th style="width: 75px; text-align: center;">Time</th>
+            <th style="width: 70px; text-align: center;">Time</th>
             <th>Occurrence Summary</th>
-            <th style="width: 95px;">Status</th>
-            <th style="width: 130px;">Followed By</th>
-            <th class="action-col"></th>
+            <th style="width: 90px;">Status</th>
+            <th style="width: 120px;">Followed By</th>
+            <th class="action-col" style="width: 28px; text-align: center;"></th>
           </tr>
         </thead>
         <tbody>
@@ -1468,12 +1378,56 @@
     <!-- FOOTER SIGN OFF -->
     <div class="footer-bar">
       <div>Document generated under DP World Security Management Protocol</div>
+      <div class="footer-duty-summary">
+        <span><strong>Supervisor:</strong> <span id="footerSupName">Bassem Abbass</span></span>
+        <span>&bull;</span>
+        <span><strong>Operators:</strong> <span id="footerOp1Name">Abdulrahman Al-Tuhami</span>, <span id="footerOp2Name">Moataz Sabri</span></span>
+      </div>
       <div class="signature-area">
-        <span>Security Manager:</span>
-        <div class="sign-line" contenteditable="true" id="signLine"></div>
+        <span>Assistant Security Manager:</span>
+        <div class="sign-line" contenteditable="true" id="signLine">Ibrahim Shahin</div>
       </div>
     </div>
 
+  </div>
+
+  <!-- STARTING SERIALS SETTINGS MODAL -->
+  <div id="serialConfigModal" class="serial-modal" onclick="if(event.target === this) closeSerialModal()">
+    <div class="serial-modal-content">
+      <div class="serial-modal-title">
+        <span>⚙️ Starting Serials</span>
+        <span style="cursor:pointer; font-size:16px;" onclick="closeSerialModal()">&times;</span>
+      </div>
+      <div class="serial-input-row">
+        <span>Security Notice:</span>
+        <input type="number" id="base_sec_notice" class="serial-input-box" min="1" value="79">
+      </div>
+      <div class="serial-input-row">
+        <span>Near Miss:</span>
+        <input type="number" id="base_near_miss" class="serial-input-box" min="1" value="1">
+      </div>
+      <div class="serial-input-row">
+        <span>Damage:</span>
+        <input type="number" id="base_damage" class="serial-input-box" min="1" value="1">
+      </div>
+      <div class="serial-input-row">
+        <span>Incident:</span>
+        <input type="number" id="base_incident" class="serial-input-box" min="1" value="1">
+      </div>
+      <div class="serial-input-row">
+        <span>Theft Case:</span>
+        <input type="number" id="base_theft" class="serial-input-box" min="1" value="1">
+      </div>
+      <div class="serial-input-row">
+        <span>Bribery Case:</span>
+        <input type="number" id="base_bribery" class="serial-input-box" min="1" value="1">
+      </div>
+      <div class="serial-input-row">
+        <span>Container Breach:</span>
+        <input type="number" id="base_breach" class="serial-input-box" min="1" value="1">
+      </div>
+      <button class="btn-apply-serials" onclick="saveSerialConfig()">Apply & Renumber Serials</button>
+    </div>
   </div>
 
   <!-- MODAL FOR FULL-SIZE IMAGE PREVIEW -->
@@ -1483,22 +1437,92 @@
       style="max-width:88%; max-height:88%; border-radius:8px; box-shadow:0 10px 40px rgba(0,0,0,0.6); object-fit:contain;" />
   </div>
 
-  <!-- INTERACTIVE FUNCTIONALITY, CALCULATIONS & DRAG-AND-DROP -->
+  <!-- JAVASCRIPT: ROBUST PERSISTENCE WITH LOADING LOCK -->
   <script>
-    const trashIconHTML = `<button class="btn-delete" title="Delete Row" onclick="deleteAttendanceRow(this)"><svg class="trash-svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1z"></path><rect x="3.5" y="5" width="17" height="2.5" rx="1"></rect><path d="M5.5 7.5L7 20a2 2 0 0 0 2 1.5h6a2 2 0 0 0 2-1.5l1.5-12.5"></path><line x1="9.5" y1="11" x2="9.5" y2="18"></line><line x1="12" y1="11" x2="12" y2="18"></line><line x1="14.5" y1="11" x2="14.5" y2="18"></line></svg></button>`;
+    const trashSvgHTML = `<svg class="trash-svg" viewBox="0 0 24 24" fill="none" stroke="#e03131" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 4.5h7a1.5 1.5 0 0 0-1.5-1.5h-4a1.5 1.5 0 0 0-1.5 1.5z"></path><rect x="2" y="4.5" width="20" height="2.8" rx="1.4"></rect><path d="M4.5 7.5l1.3 13a2 2 0 0 0 2 1.8h8.4a2 2 0 0 0 2-1.8l1.3-13"></path><line x1="9.5" y1="11" x2="9.5" y2="18"></line><line x1="12" y1="11" x2="12" y2="18"></line><line x1="14.5" y1="11" x2="14.5" y2="18"></line></svg>`;
+
+    const DEFAULT_GATE_PRELOADS = [
+      "Empty Yard",
+      "WH-A",
+      "WH-B",
+      "WH-C",
+      "Hay Yard"
+    ];
+
+    let isLoadingState = true;
+    let isResetting = false;
+
+    // INCIDENT SERIAL AUTO-INCREMENT SYSTEM
+    let incidentBaseSerials = {
+      "Security Notice": 79,
+      "Near Miss": 1,
+      "Damage": 1,
+      "Incident": 1,
+      "Theft Case": 1,
+      "Bribery Case": 1,
+      "Container Breach": 1
+    };
+
+    function openSerialModal() {
+      document.getElementById('base_sec_notice').value = incidentBaseSerials["Security Notice"] || 79;
+      document.getElementById('base_near_miss').value = incidentBaseSerials["Near Miss"] || 1;
+      document.getElementById('base_damage').value = incidentBaseSerials["Damage"] || 1;
+      document.getElementById('base_incident').value = incidentBaseSerials["Incident"] || 1;
+      document.getElementById('base_theft').value = incidentBaseSerials["Theft Case"] || 1;
+      document.getElementById('base_bribery').value = incidentBaseSerials["Bribery Case"] || 1;
+      document.getElementById('base_breach').value = incidentBaseSerials["Container Breach"] || 1;
+
+      document.getElementById('serialConfigModal').style.display = 'flex';
+    }
+
+    function closeSerialModal() {
+      document.getElementById('serialConfigModal').style.display = 'none';
+    }
+
+    function saveSerialConfig() {
+      incidentBaseSerials["Security Notice"] = parseInt(document.getElementById('base_sec_notice').value, 10) || 1;
+      incidentBaseSerials["Near Miss"] = parseInt(document.getElementById('base_near_miss').value, 10) || 1;
+      incidentBaseSerials["Damage"] = parseInt(document.getElementById('base_damage').value, 10) || 1;
+      incidentBaseSerials["Incident"] = parseInt(document.getElementById('base_incident').value, 10) || 1;
+      incidentBaseSerials["Theft Case"] = parseInt(document.getElementById('base_theft').value, 10) || 1;
+      incidentBaseSerials["Bribery Case"] = parseInt(document.getElementById('base_bribery').value, 10) || 1;
+      incidentBaseSerials["Container Breach"] = parseInt(document.getElementById('base_breach').value, 10) || 1;
+
+      closeSerialModal();
+      recalculateIncidentSerials();
+      autoSave();
+    }
+
+    function recalculateIncidentSerials() {
+      const currentYear = new Date().getFullYear();
+      const counters = {};
+      Object.keys(incidentBaseSerials).forEach(k => counters[k] = 0);
+
+      const rows = document.querySelectorAll('#incidentTable tbody tr');
+      rows.forEach(row => {
+        const select = row.querySelector('.status-select');
+        const type = select ? select.value : 'Security Notice';
+
+        if (counters[type] === undefined) counters[type] = 0;
+
+        const base = parseInt(incidentBaseSerials[type], 10) || 1;
+        const serialNum = base + counters[type];
+        counters[type]++;
+
+        const serialCell = row.querySelector('.incident-serial-val');
+        if (serialCell) {
+          serialCell.innerText = `${serialNum}/${currentYear}`;
+        }
+      });
+    }
 
     // AUTOMATIC TODAY'S DATE INITIALIZER
     function initTodayDate(force = false) {
       const input = document.getElementById('calendarInput');
       if (!input) return;
       if (!input.value || force) {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, '0');
-        const day = String(now.getDate()).padStart(2, '0');
-        const todayISO = `${year}-${month}-${day}`;
-        input.value = todayISO;
-        updateFormattedDate(todayISO);
+        input.value = "2026-11-04";
+        updateFormattedDate("2026-11-04");
       }
     }
 
@@ -1524,109 +1548,146 @@
 
     // SHIFT SELECTOR
     function updateShift(shiftType) {
-      const display = document.getElementById('shiftBadgeDisplay');
+      const badge = document.getElementById('shiftBadgeDisplay');
+      const icon = document.getElementById('shiftIcon');
+      const select = document.getElementById('shiftSelect');
+
+      if (select) select.value = shiftType;
+
       if (shiftType === 'Morning') {
-        display.innerHTML = '☀️ <strong>Shift:</strong> <span contenteditable="true">Morning Shift (08:00 - 20:00)</span>';
-        display.style.background = '#ecfdf5';
-        display.style.color = '#065f46';
-        display.style.borderColor = '#a7f3d0';
+        badge.className = 'badge badge-shift';
+        if (icon) icon.innerText = '☀️';
       } else {
-        display.innerHTML = '🌙 <strong>Shift:</strong> <span contenteditable="true">Night Shift (20:00 - 08:00)</span>';
-        display.style.background = '#0e1626';
-        display.style.color = '#ffffff';
-        display.style.borderColor = '#0e1626';
+        badge.className = 'badge badge-shift shift-night';
+        if (icon) icon.innerText = '🌙';
+      }
+    }
+
+    // SUPERVISOR & OPERATORS ROSTER CONTROLLER
+    function syncDuty(type, value) {
+      const tbId = type === 'supervisor' ? 'tbSupervisor' : (type === 'op1' ? 'tbOp1' : 'tbOp2');
+      const footerId = type === 'supervisor' ? 'footerSupName' : (type === 'op1' ? 'footerOp1Name' : 'footerOp2Name');
+
+      const tbEl = document.getElementById(tbId);
+      const footerEl = document.getElementById(footerId);
+
+      if (tbEl) tbEl.value = value;
+      if (footerEl) footerEl.innerText = value;
+    }
+
+    function setSelectValueWithFallback(selectId, val) {
+      const el = document.getElementById(selectId);
+      if (!el) return;
+      if (typeof val === 'object' && val !== null) {
+        val = val.value || '';
+      }
+      const exists = Array.from(el.options).some(opt => opt.value === val);
+      if (exists) {
+        el.value = val;
+      } else if (el.options.length > 0 && (!el.value || el.selectedIndex === -1)) {
+        el.selectedIndex = 0;
       }
     }
 
     // ATTENDANCE CALCULATION
     function calculateAttendance() {
-      // 1. In-Source
-      let inTotal = 0, inAttended = 0;
-      document.querySelectorAll('#insourceTable .att-row').forEach(row => {
-        const total = parseFloat(row.querySelector('.att-total').innerText.replace(/[^0-9.]/g, '')) || 0;
-        const attended = parseFloat(row.querySelector('.att-attended').innerText.replace(/[^0-9.]/g, '')) || 0;
-        const leave = Math.max(0, total - attended);
-
-        row.querySelector('.att-leave').innerText = leave;
-        inTotal += total;
-        inAttended += attended;
-
-        const sCell = row.querySelector('.att-status');
-        if (sCell) {
-          const rate = total > 0 ? Math.round((attended / total) * 100) : 0;
-          const pillClass = rate >= 90 ? 'pill-active' : (rate >= 75 ? 'pill-warning' : 'pill-alert');
-          sCell.innerHTML = `<span class="status-pill ${pillClass}">${rate}%</span>`;
-        }
-      });
-
-      const inLeave = Math.max(0, inTotal - inAttended);
-      const inRate = inTotal > 0 ? (inAttended / inTotal * 100) : 0;
-      const formattedInRate = (inRate % 1 === 0 ? inRate.toFixed(0) : inRate.toFixed(1)) + '%';
-
-      document.getElementById('inTotalStaff').innerText = inTotal;
-      document.getElementById('inTotalAttended').innerText = inAttended;
-      document.getElementById('inTotalLeave').innerText = inLeave;
-      const inPill = inRate >= 90 ? 'pill-active' : (inRate >= 75 ? 'pill-warning' : 'pill-alert');
-      document.getElementById('inTotalRate').innerHTML = `<span class="status-pill ${inPill}">${formattedInRate}</span>`;
-
-      // 2. Outsource
-      let outTotal = 0, outAttended = 0;
-      document.querySelectorAll('#outsourceTable .att-row').forEach(row => {
-        const total = parseFloat(row.querySelector('.att-total').innerText.replace(/[^0-9.]/g, '')) || 0;
-        const attended = parseFloat(row.querySelector('.att-attended').innerText.replace(/[^0-9.]/g, '')) || 0;
-        const leave = Math.max(0, total - attended);
-
-        row.querySelector('.att-leave').innerText = leave;
-        outTotal += total;
-        outAttended += attended;
-
-        const sCell = row.querySelector('.att-status');
-        if (sCell) {
-          const rate = total > 0 ? Math.round((attended / total) * 100) : 0;
-          const pillClass = rate >= 90 ? 'pill-active' : (rate >= 75 ? 'pill-warning' : 'pill-alert');
-          sCell.innerHTML = `<span class="status-pill ${pillClass}">${rate}%</span>`;
-        }
-      });
-
-      const outLeave = Math.max(0, outTotal - outAttended);
-      const outRate = outTotal > 0 ? (outAttended / outTotal * 100) : 0;
-      const formattedOutRate = (outRate % 1 === 0 ? outRate.toFixed(0) : outRate.toFixed(1)) + '%';
-
-      document.getElementById('outTotalStaff').innerText = outTotal;
-      document.getElementById('outTotalAttended').innerText = outAttended;
-      document.getElementById('outTotalLeave').innerText = outLeave;
-      const outPill = outRate >= 90 ? 'pill-active' : (outRate >= 75 ? 'pill-warning' : 'pill-alert');
-      document.getElementById('outTotalRate').innerHTML = `<span class="status-pill ${outPill}">${formattedOutRate}</span>`;
-
-      // 3. Security Team KPI
       let secTotal = 0, secAttended = 0;
-      const dpwSecRow = document.getElementById('sec-row-dpw');
-      const goldenRow = document.getElementById('sec-row-golden');
+      document.querySelectorAll('#securityTable .att-sec-row').forEach(row => {
+        const tot = parseInt(row.querySelector('.sec-tot').value, 10) || 0;
+        const att = parseInt(row.querySelector('.sec-att').value, 10) || 0;
+        const leave = Math.max(0, tot - att);
 
-      let dpwSecAtt = 0, goldenAtt = 0;
+        row.querySelector('.sec-leave').innerText = leave;
+        secTotal += tot;
+        secAttended += att;
 
-      if (dpwSecRow) {
-        const t = parseFloat(dpwSecRow.querySelector('.att-total').innerText.replace(/[^0-9.]/g, '')) || 0;
-        const a = parseFloat(dpwSecRow.querySelector('.att-attended').innerText.replace(/[^0-9.]/g, '')) || 0;
-        secTotal += t;
-        secAttended += a;
-        dpwSecAtt = a;
-      }
+        const rateCell = row.querySelector('.sec-rate-cell');
+        if (rateCell) {
+          if (tot === 0) {
+            rateCell.innerHTML = '<span class="status-pill pill-alert">0%</span>';
+          } else {
+            const r = Math.round((att / tot) * 100);
+            const pillClass = r >= 90 ? 'pill-active' : (r >= 75 ? 'pill-warning' : 'pill-alert');
+            rateCell.innerHTML = `<span class="status-pill ${pillClass}">${r}%</span>`;
+          }
+        }
+      });
 
-      if (goldenRow) {
-        const t = parseFloat(goldenRow.querySelector('.att-total').innerText.replace(/[^0-9.]/g, '')) || 0;
-        const a = parseFloat(goldenRow.querySelector('.att-attended').innerText.replace(/[^0-9.]/g, '')) || 0;
-        secTotal += t;
-        secAttended += a;
-        goldenAtt = a;
-      }
-
+      const secLeave = Math.max(0, secTotal - secAttended);
       const secRate = secTotal > 0 ? Math.round((secAttended / secTotal) * 100) : 0;
+      const secPillClass = secRate >= 90 ? 'pill-active' : (secRate >= 75 ? 'pill-warning' : 'pill-alert');
+
+      document.getElementById('secStaffTotal').innerText = secTotal;
+      document.getElementById('secAttTotal').innerText = secAttended;
+      document.getElementById('secLeaveTotal').innerText = secLeave;
+      const secRateEl = document.getElementById('secRateTotal');
+      secRateEl.innerHTML = `<span class="status-pill ${secPillClass}">${secRate}%</span>`;
+
       document.getElementById('kpiSecAttended').innerText = secAttended;
-      document.getElementById('kpiSecSub').innerHTML = `${secRate}% Attendance &bull; ${dpwSecAtt} DPW + ${goldenAtt} Golden`;
+      document.getElementById('kpiSecSub').innerHTML = `${secRate}% Attendance &bull; DPW & Golden`;
+
+      let mpInTotal = 0;
+      document.querySelectorAll('#manpowerInsourceTable .mp-in-row').forEach(row => {
+        mpInTotal += parseInt(row.querySelector('.mp-count').value, 10) || 0;
+      });
+      document.getElementById('mpInsourceTotal').innerText = mpInTotal;
+
+      let mpOutTotal = 0;
+      document.querySelectorAll('#manpowerOutsourceTable .mp-out-row').forEach(row => {
+        mpOutTotal += parseInt(row.querySelector('.mp-count').value, 10) || 0;
+      });
+      document.getElementById('mpOutsourceTotal').innerText = mpOutTotal;
+
+      const grandManpower = mpInTotal + mpOutTotal;
+      document.getElementById('kpiManpowerTotal').innerText = grandManpower;
+      document.getElementById('kpiManpowerSub').innerHTML = `${mpInTotal} In-Source &bull; ${mpOutTotal} Outsource`;
     }
 
-    // GATE TRANSACTIONS STATUS HANDLER
+    function addSecurityRow() {
+      const tbody = document.querySelector('#securityTable tbody');
+      const tr = document.createElement('tr');
+      tr.className = 'att-sec-row added-row';
+      tr.innerHTML = `
+        <td contenteditable="true">Security Role</td>
+        <td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input sec-tot" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td>
+        <td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input sec-att" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td>
+        <td class="sec-leave" style="text-align: center; color: var(--text-muted);">0</td>
+        <td class="sec-rate-cell" style="text-align: center;"><span class="status-pill pill-alert">0%</span></td>
+        <td class="action-col"><button type="button" class="btn-delete" title="Delete" onclick="deleteRow(this)">${trashSvgHTML}</button></td>
+      `;
+      tbody.appendChild(tr);
+      calculateAttendance();
+      autoSave();
+    }
+
+    function addManpowerInsourceRow() {
+      const tbody = document.querySelector('#manpowerInsourceTable tbody');
+      const tr = document.createElement('tr');
+      tr.className = 'mp-in-row added-row';
+      tr.innerHTML = `
+        <td contenteditable="true">Department</td>
+        <td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td>
+        <td class="action-col"><button type="button" class="btn-delete" title="Delete" onclick="deleteRow(this)">${trashSvgHTML}</button></td>
+      `;
+      tbody.appendChild(tr);
+      calculateAttendance();
+      autoSave();
+    }
+
+    function addManpowerOutsourceRow() {
+      const tbody = document.querySelector('#manpowerOutsourceTable tbody');
+      const tr = document.createElement('tr');
+      tr.className = 'mp-out-row added-row';
+      tr.innerHTML = `
+        <td contenteditable="true">Contractor</td>
+        <td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td>
+        <td class="action-col"><button type="button" class="btn-delete" title="Delete" onclick="deleteRow(this)">${trashSvgHTML}</button></td>
+      `;
+      tbody.appendChild(tr);
+      calculateAttendance();
+      autoSave();
+    }
+
     function updateGateRowStatus(select) {
       const row = select.closest('tr');
       const val = (select.value || '').trim().toLowerCase();
@@ -1643,7 +1704,6 @@
       autoSave();
     }
 
-    // GATE TRANSACTIONS CALCULATION
     function calculateGateTransactions() {
       let totalTrucks = 0;
       let gatedOut = 0;
@@ -1702,54 +1762,35 @@
       }
     }
 
-    // INCIDENT LOG AUTO-CALCULATION (PLAIN NUMBER STYLE)
     function calculateIncidents() {
       let total = 0;
-      let secNotice = 0;
-      let nearMiss = 0;
-      let damage = 0;
-      let incident = 0;
-      let theftCase = 0;
-      let briberyCase = 0;
-      let containerBreach = 0;
+      let secNotice = 0, nearMiss = 0, damage = 0, incident = 0, theftCase = 0, briberyCase = 0, containerBreach = 0;
 
       document.querySelectorAll('#incidentTable tbody tr').forEach(row => {
         total++;
         const select = row.querySelector('.status-select');
         const type = select ? select.value.toLowerCase() : '';
-        if (type.includes('security')) {
-          secNotice++;
-        } else if (type.includes('near') || type.includes('miss')) {
-          nearMiss++;
-        } else if (type.includes('damage')) {
-          damage++;
-        } else if (type.includes('incident')) {
-          incident++;
-        } else if (type.includes('theft')) {
-          theftCase++;
-        } else if (type.includes('bribery')) {
-          briberyCase++;
-        } else if (type.includes('container')) {
-          containerBreach++;
-        }
+        if (type.includes('security')) secNotice++;
+        else if (type.includes('near') || type.includes('miss')) nearMiss++;
+        else if (type.includes('damage')) damage++;
+        else if (type.includes('incident')) incident++;
+        else if (type.includes('theft')) theftCase++;
+        else if (type.includes('bribery')) briberyCase++;
+        else if (type.includes('container')) containerBreach++;
       });
 
       const valEl = document.getElementById('kpiIncidentValue');
-      const subEl1 = document.getElementById('kpiIncidentSub1');
-      const subEl2 = document.getElementById('kpiIncidentSub2')
+      if (valEl) valEl.innerText = `${total} Report${total === 1 ? '' : 's'}`;
 
-      if (valEl) {
-        valEl.innerText = `${total} Report${total === 1 ? '' : 's'}`;
-      }
-      if (subEl1) {
-        subEl1.innerHTML = `${secNotice} Security Notice &bull; ${nearMiss} Near Miss &bull; ${damage} Damage &bull; ${incident} Incident`;
-      }
-      if (subEl2) {
-        subEl2.innerHTML = `${theftCase} Theft Case &bull; ${briberyCase} Bribery Case &bull; ${containerBreach} Container Breach`
-      }
+      if (document.getElementById('incCntNotice')) document.getElementById('incCntNotice').innerText = secNotice;
+      if (document.getElementById('incCntTheft')) document.getElementById('incCntTheft').innerText = theftCase;
+      if (document.getElementById('incCntNearMiss')) document.getElementById('incCntNearMiss').innerText = nearMiss;
+      if (document.getElementById('incCntBribery')) document.getElementById('incCntBribery').innerText = briberyCase;
+      if (document.getElementById('incCntDamage')) document.getElementById('incCntDamage').innerText = damage;
+      if (document.getElementById('incCntBreach')) document.getElementById('incCntBreach').innerText = containerBreach;
+      if (document.getElementById('incCntIncident')) document.getElementById('incCntIncident').innerText = incident;
     }
 
-    // INCIDENT STATUS STYLE
     function updateIncidentStyle(select) {
       const val = select.value.toLowerCase();
       if (val.includes('security') || val.includes('theft') || val.includes('bribery')) {
@@ -1761,17 +1802,17 @@
       } else {
         select.className = 'status-select pill-caution';
       }
+      recalculateIncidentSerials();
       calculateIncidents();
       autoSave();
     }
 
-    // HIGH-DEFINITION IMAGE PROCESSING (CRISP IN PDF & PRINT)
     function compressImage(file, callback) {
       const reader = new FileReader();
       reader.onload = function (e) {
         const img = new Image();
         img.onload = function () {
-          const maxDim = 1800; // Ultra high-resolution for clear print
+          const maxDim = 1800;
           let w = img.width, h = img.height;
           if (w > maxDim || h > maxDim) {
             if (w > h) { h = Math.round(h * maxDim / w); w = maxDim; }
@@ -1790,7 +1831,6 @@
       reader.readAsDataURL(file);
     }
 
-    // MULTI-PHOTO ATTACHMENT HANDLERS
     function handleIncidentPhotos(input) {
       if (input.files && input.files.length > 0) {
         const row = input.closest('tr');
@@ -1829,72 +1869,79 @@
       modal.style.display = 'flex';
     }
 
-    // ADD IN-SOURCE ROW
-    function addInsourceRow() {
-      const tbody = document.querySelector('#insourceTable tbody');
-      const tr = document.createElement('tr');
-      tr.className = 'att-row added-att-row';
-      tr.innerHTML = `
-        <td contenteditable="true">New Role</td>
-        <td class="att-total" contenteditable="true" oninput="calculateAttendance()" style="text-align: center; font-weight:600;">1</td>
-        <td class="att-attended" contenteditable="true" oninput="calculateAttendance()" style="text-align: center; font-weight:600;">1</td>
-        <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-        <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-        <td class="action-col">${trashIconHTML}</td>
-      `;
-      tbody.appendChild(tr);
-      calculateAttendance();
-      autoSave();
-    }
-
-    // ADD OUTSOURCE ROW
-    function addOutsourceRow() {
-      const tbody = document.querySelector('#outsourceTable tbody');
-      const tr = document.createElement('tr');
-      tr.className = 'att-row added-att-row';
-      tr.innerHTML = `
-        <td contenteditable="true">New Contractor</td>
-        <td class="att-total" contenteditable="true" oninput="calculateAttendance()" style="text-align: center; font-weight:600;">1</td>
-        <td class="att-attended" contenteditable="true" oninput="calculateAttendance()" style="text-align: center; font-weight:600;">1</td>
-        <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-        <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-        <td class="action-col">${trashIconHTML}</td>
-      `;
-      tbody.appendChild(tr);
-      calculateAttendance();
-      autoSave();
-    }
-
-    // DELETE ATTENDANCE ROW
-    function deleteAttendanceRow(btn) {
-      btn.closest('tr').remove();
-      calculateAttendance();
-      autoSave();
-    }
-
-    // GENERIC ROW DELETE
+    // SAFE DELETE ROW HANDLER
     function deleteRow(btn) {
-      const table = btn.closest('table');
-      btn.closest('tr').remove();
-      if (table.id === 'gateTable') calculateGateTransactions();
-      if (table.id === 'incidentTable') calculateIncidents();
+      const row = btn.closest('tr');
+      if (!row) return;
+      const table = row.closest('table');
+      const tableId = table ? table.id : '';
+      row.remove();
+
+      if (tableId === 'gateTable') calculateGateTransactions();
+      if (tableId === 'incidentTable') {
+        recalculateIncidentSerials();
+        calculateIncidents();
+      }
+      if (tableId === 'securityTable' || tableId === 'manpowerInsourceTable' || tableId === 'manpowerOutsourceTable') {
+        calculateAttendance();
+      }
       autoSave();
     }
 
-    // ADD NEW GATE ROW (DEFAULTS TO COUNT OF 1)
+    function getGatePreloadRowHTML(name, count = 0, entry = '08:00', exit = '', status = 'On Site', inVal = 0) {
+      const isSplit = (status || '').toLowerCase() === 'split';
+      const isGatedOut = (status || '').toLowerCase() === 'gated out';
+      const pillClass = isSplit ? 'pill-warning' : (isGatedOut ? 'pill-neutral' : 'pill-active');
+      const outVal = Math.max(0, count - inVal);
+      const safeName = String(name).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+
+      return `
+        <td style="text-align: center;"><input type="number" min="0" value="${count}" class="cell-input gate-truck-count" oninput="calculateGateTransactions(); autoSave();" /></td>
+        <td style="text-align: center;"><input type="time" class="cell-input time-input" value="${entry}" /></td>
+        <td style="text-align: center;"><input type="time" class="cell-input time-input" value="${exit}" /></td>
+        <td><strong>${safeName}</strong></td>
+        <td style="text-align: center;">
+          <select class="status-select ${pillClass}" onchange="updateGateRowStatus(this)">
+            <option value="On Site" ${status === 'On Site' ? 'selected' : ''}>On Site</option>
+            <option value="Gated Out" ${status === 'Gated Out' ? 'selected' : ''}>Gated Out</option>
+            <option value="Split" ${status === 'Split' ? 'selected' : ''}>Split</option>
+          </select>
+          <div class="split-detail" style="display: ${isSplit ? 'flex' : 'none'};">
+            <span class="status-pill pill-active" style="padding: 1px 3px;"><input type="number" min="0" value="${inVal}" class="split-in-input" oninput="calculateGateTransactions(); autoSave();" title="On Site" /> In</span>
+            <span class="status-pill pill-neutral" style="padding: 1px 3px;"><span class="split-out-val">${outVal}</span> Out</span>
+          </div>
+        </td>
+        <td class="action-col" style="width: 28px; text-align: center;"><button type="button" class="btn-delete" title="Delete preloaded gate transaction" onclick="deleteRow(this)">${trashSvgHTML}</button></td>
+      `;
+    }
+
+    function rebuildDefaultGatePreloads() {
+      const tbody = document.querySelector('#gateTable tbody');
+      if (!tbody) return;
+      tbody.querySelectorAll('.gate-preload-row').forEach(r => r.remove());
+
+      const firstAdded = tbody.querySelector('tr.added-row');
+      DEFAULT_GATE_PRELOADS.forEach(name => {
+        const tr = document.createElement('tr');
+        tr.className = 'gate-preload-row';
+        tr.innerHTML = getGatePreloadRowHTML(name, 0, '08:00', '', 'On Site', 0);
+        if (firstAdded) {
+          tbody.insertBefore(tr, firstAdded);
+        } else {
+          tbody.appendChild(tr);
+        }
+      });
+      calculateGateTransactions();
+    }
+
     function addGateRow() {
       const tbody = document.querySelector('#gateTable tbody');
       const tr = document.createElement('tr');
+      tr.className = 'added-row';
       tr.innerHTML = `
-        <td style="text-align: center;">
-          <input type="number" min="0" value="1" class="cell-input gate-truck-count" oninput="calculateGateTransactions()" />
-        </td>
-        <td style="text-align: center;">
-          <input type="time" class="cell-input time-input" />
-        </td>
-        <td style="text-align: center;">
-          <input type="time" class="cell-input time-input" />
-        </td>
+        <td style="text-align: center;"><input type="number" min="0" value="0" class="cell-input gate-truck-count" oninput="calculateGateTransactions(); autoSave();" /></td>
+        <td style="text-align: center;"><input type="time" class="cell-input time-input" /></td>
+        <td style="text-align: center;"><input type="time" class="cell-input time-input" /></td>
         <td contenteditable="true" style="color: var(--text-main);">Enter company / reason...</td>
         <td style="text-align: center;">
           <select class="status-select pill-active" onchange="updateGateRowStatus(this)">
@@ -1903,28 +1950,24 @@
             <option value="Split">Split</option>
           </select>
           <div class="split-detail" style="display: none;">
-            <span class="status-pill pill-active" style="padding: 1px 4px;">
-              <input type="number" min="0" value="0" class="split-in-input" oninput="calculateGateTransactions()" title="On Site" /> In
-            </span>
-            <span class="status-pill pill-neutral" style="padding: 1px 4px;">
-              <span class="split-out-val">0</span> Out
-            </span>
+            <span class="status-pill pill-active" style="padding: 1px 3px;"><input type="number" min="0" value="0" class="split-in-input" oninput="calculateGateTransactions(); autoSave();" title="On Site" /> In</span>
+            <span class="status-pill pill-neutral" style="padding: 1px 3px;"><span class="split-out-val">0</span> Out</span>
           </div>
         </td>
-        <td class="action-col"><button class="btn-delete" title="Delete Row" onclick="deleteRow(this)"><svg class="trash-svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1z"></path><rect x="3.5" y="5" width="17" height="2.5" rx="1"></rect><path d="M5.5 7.5L7 20a2 2 0 0 0 2 1.5h6a2 2 0 0 0 2-1.5l1.5-12.5"></path><line x1="9.5" y1="11" x2="9.5" y2="18"></line><line x1="12" y1="11" x2="12" y2="18"></line><line x1="14.5" y1="11" x2="14.5" y2="18"></line></svg></button></td>
+        <td class="action-col" style="width: 28px; text-align: center;"><button type="button" class="btn-delete" title="Delete" onclick="deleteRow(this)">${trashSvgHTML}</button></td>
       `;
       tbody.appendChild(tr);
       calculateGateTransactions();
       autoSave();
     }
 
-    // ADD INCIDENT ROW (WITH HIGH-RES MULTI-PHOTO ATTACHMENT)
+    // ADD INCIDENT ROW (CENTERED EVIDENCE & SAFE DELETE)
     function addIncidentRow() {
       const tbody = document.querySelector('#incidentTable tbody');
       const tr = document.createElement('tr');
-      const year = new Date().getFullYear();
+      tr.className = 'added-row';
       tr.innerHTML = `
-        <td><strong style="color:var(--dp-navy);" contenteditable="true">--/${year}</strong></td>
+        <td style="text-align: center;"><strong style="color:var(--dp-navy);" class="incident-serial-val">--</strong></td>
         <td>
           <select class="status-select pill-alert" onchange="updateIncidentStyle(this)">
             <option value="Security Notice" selected>Security Notice</option>
@@ -1937,31 +1980,34 @@
           </select>
         </td>
         <td contenteditable="true">Enter incident summary...</td>
-        <td style="text-align: center;">
-          <div class="photo-gallery">
-            <div class="photo-items-wrap"></div>
-            <label class="btn-attach-photo" title="Attach Photos">
+        <td style="width: 110px; text-align: center; vertical-align: middle;">
+          <div class="photo-gallery" style="display: flex; align-items: center; justify-content: center; gap: 4px; margin: 0 auto; width: 100%;">
+            <div class="photo-items-wrap" style="display: flex; align-items: center; justify-content: center; gap: 4px;"></div>
+            <label class="btn-attach-photo" title="Attach Photos" style="margin: 0 auto;">
               <input type="file" accept="image/*" multiple style="display:none;" onchange="handleIncidentPhotos(this)" />
               <span>📷 +</span>
             </label>
           </div>
         </td>
-        <td class="action-col"><button class="btn-delete" title="Delete Row" onclick="deleteRow(this)"><svg class="trash-svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1z"></path><rect x="3.5" y="5" width="17" height="2.5" rx="1"></rect><path d="M5.5 7.5L7 20a2 2 0 0 0 2 1.5h6a2 2 0 0 0 2-1.5l1.5-12.5"></path><line x1="9.5" y1="11" x2="9.5" y2="18"></line><line x1="12" y1="11" x2="12" y2="18"></line><line x1="14.5" y1="11" x2="14.5" y2="18"></line></svg></button></td>
+        <td class="action-col" style="width: 28px; text-align: center; vertical-align: middle;">
+          <button type="button" class="btn-delete" title="Delete Incident" onclick="deleteRow(this)">
+            ${trashSvgHTML}
+          </button>
+        </td>
       `;
       tbody.appendChild(tr);
+      recalculateIncidentSerials();
       calculateIncidents();
       autoSave();
     }
 
-    // ADD EVENT ROW (WITH DRAGGABLE HANDLE)
     function addEventRow() {
       const tbody = document.querySelector('#eventsTable tbody');
       const tr = document.createElement('tr');
+      tr.className = 'added-row';
       tr.innerHTML = `
         <td class="drag-col" style="text-align: center;"><span class="drag-handle" title="Drag to reorder">⋮⋮</span></td>
-        <td style="text-align: center;">
-          <input type="time" class="cell-input time-input" value="08:00" />
-        </td>
+        <td style="text-align: center;"><input type="time" class="cell-input time-input" value="08:00" /></td>
         <td contenteditable="true" class="event-summary">Enter operational event or observation here...</td>
         <td>
           <select class="status-select pill-active" onchange="this.className = 'status-select ' + (this.value === 'Followed' ? 'pill-active' : 'pill-neutral'); autoSave();">
@@ -1970,14 +2016,13 @@
           </select>
         </td>
         <td contenteditable="true" class="event-dept">Department</td>
-        <td class="action-col"><button class="btn-delete" title="Delete Row" onclick="deleteRow(this)"><svg class="trash-svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1z"></path><rect x="3.5" y="5" width="17" height="2.5" rx="1"></rect><path d="M5.5 7.5L7 20a2 2 0 0 0 2 1.5h6a2 2 0 0 0 2-1.5l1.5-12.5"></path><line x1="9.5" y1="11" x2="9.5" y2="18"></line><line x1="12" y1="11" x2="12" y2="18"></line><line x1="14.5" y1="11" x2="14.5" y2="18"></line></svg></button></td>
+        <td class="action-col" style="width: 28px; text-align: center;"><button type="button" class="btn-delete" title="Delete Row" onclick="deleteRow(this)">${trashSvgHTML}</button></td>
       `;
       tbody.appendChild(tr);
       makeEventsDraggable();
       autoSave();
     }
 
-    // DRAGGABLE EVENTS IMPLEMENTATION
     let draggedEventRow = null;
 
     function makeEventsDraggable() {
@@ -1988,7 +2033,6 @@
         row.setAttribute('draggable', 'true');
 
         row.ondragstart = (e) => {
-          // Prevent drag when selecting text in contenteditable or input
           if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.isContentEditable)) {
             if (!e.target.classList.contains('drag-handle') && !e.target.classList.contains('drag-col')) {
               e.preventDefault();
@@ -2021,29 +2065,41 @@
       });
     }
 
-    // AUTO-SAVE SYSTEM & PERSISTENCE
+    // PERSISTENCE & AUTO-SAVE
     let saveTimeout = null;
 
-    function triggerAutoSave() {
+    function autoSave() {
+      if (isLoadingState || isResetting) return;
+
       const indicator = document.getElementById('saveIndicator');
       if (indicator) indicator.innerText = '💾 Saving...';
 
       clearTimeout(saveTimeout);
       saveTimeout = setTimeout(() => {
-        saveDashboardState();
-        if (indicator) indicator.innerText = '💾 Saved';
-      }, 350);
-    }
-
-    function autoSave() {
-      triggerAutoSave();
+        const saved = saveDashboardState();
+        if (indicator) {
+          indicator.innerText = saved ? '💾 Saved' : '⚠️ Save failed';
+          indicator.title = saved ? 'Dashboard data saved.' : 'Save failed.';
+        }
+      }, 150);
     }
 
     function saveDashboardState() {
+      if (isLoadingState || isResetting) return false;
       try {
         const state = {
           date: document.getElementById('calendarInput').value,
-          shift: document.getElementById('shiftSelector').value,
+          shift: document.getElementById('shiftSelect').value,
+
+          dutySupervisor: document.getElementById('tbSupervisor') ? document.getElementById('tbSupervisor').value : '',
+          dutyOp1: document.getElementById('tbOp1') ? document.getElementById('tbOp1').value : '',
+          dutyOp2: document.getElementById('tbOp2') ? document.getElementById('tbOp2').value : '',
+
+          docVersion: document.getElementById('versionBadge') ? document.getElementById('versionBadge').innerText : 'Ver. 1.0',
+          docCode: document.getElementById('docCodeBadge') ? document.getElementById('docCodeBadge').innerText : 'LP-SMP 10-F 01',
+          issueDate: document.getElementById('issueDateBadge') ? document.getElementById('issueDateBadge').innerText : '04/11/2026',
+          incidentBaseSerials: incidentBaseSerials,
+
           perimeterVal: document.getElementById('kpiPerimeterVal').innerText,
           perimeterSub: document.getElementById('kpiPerimeterSub').innerText,
           sysCCTV: document.getElementById('sysCCTV').innerText,
@@ -2052,39 +2108,42 @@
           sysNotes: document.getElementById('sysNotes').innerHTML,
           signLine: document.getElementById('signLine').innerText,
 
-          // Insource
-          insourcePreloads: Array.from(document.querySelectorAll('#insourceTable .preload-att-row')).map(row => ({
-            role: row.cells[0].innerText,
-            total: row.querySelector('.att-total').innerText,
-            attended: row.querySelector('.att-attended').innerText
+          secPreloads: Array.from(document.querySelectorAll('#securityTable tbody tr.preload-row')).map(row => ({
+            tot: row.querySelector('.sec-tot').value,
+            att: row.querySelector('.sec-att').value
           })),
-          insourceAdded: Array.from(document.querySelectorAll('#insourceTable .added-att-row')).map(row => ({
+          secAdded: Array.from(document.querySelectorAll('#securityTable tbody tr.added-row')).map(row => ({
             role: row.cells[0].innerText,
-            total: row.querySelector('.att-total').innerText,
-            attended: row.querySelector('.att-attended').innerText
+            tot: row.querySelector('.sec-tot').value,
+            att: row.querySelector('.sec-att').value
           })),
 
-          // Outsource
-          outsourcePreloads: Array.from(document.querySelectorAll('#outsourceTable .preload-att-row')).map(row => ({
-            contractor: row.cells[0].innerText,
-            total: row.querySelector('.att-total').innerText,
-            attended: row.querySelector('.att-attended').innerText
+          mpInsourcePreloads: Array.from(document.querySelectorAll('#manpowerInsourceTable tbody tr.preload-row')).map(row => ({
+            count: row.querySelector('.mp-count').value
           })),
-          outsourceAdded: Array.from(document.querySelectorAll('#outsourceTable .added-att-row')).map(row => ({
-            contractor: row.cells[0].innerText,
-            total: row.querySelector('.att-total').innerText,
-            attended: row.querySelector('.att-attended').innerText
+          mpInsourceAdded: Array.from(document.querySelectorAll('#manpowerInsourceTable tbody tr.added-row')).map(row => ({
+            dept: row.cells[0].innerText,
+            count: row.querySelector('.mp-count').value
           })),
 
-          // Gate Transactions
+          mpOutsourcePreloads: Array.from(document.querySelectorAll('#manpowerOutsourceTable tbody tr.preload-row')).map(row => ({
+            count: row.querySelector('.mp-count').value
+          })),
+          mpOutsourceAdded: Array.from(document.querySelectorAll('#manpowerOutsourceTable tbody tr.added-row')).map(row => ({
+            contractor: row.cells[0].innerText,
+            count: row.querySelector('.mp-count').value
+          })),
+
+          // Explicitly save gate preloads with facility name
           gatePreloads: Array.from(document.querySelectorAll('#gateTable .gate-preload-row')).map(row => ({
+            name: row.cells[3].innerText.trim(),
             count: row.querySelector('.gate-truck-count').value,
             entry: row.cells[1].querySelector('input').value,
             exit: row.cells[2].querySelector('input').value,
             status: row.querySelector('.status-select').value,
             inVal: row.querySelector('.split-in-input') ? row.querySelector('.split-in-input').value : 0
           })),
-          gateAdded: Array.from(document.querySelectorAll('#gateTable tbody tr:not(.gate-preload-row)')).map(row => ({
+          gateAdded: Array.from(document.querySelectorAll('#gateTable tbody tr.added-row')).map(row => ({
             count: row.querySelector('.gate-truck-count').value,
             entry: row.cells[1].querySelector('input').value,
             exit: row.cells[2].querySelector('input').value,
@@ -2093,7 +2152,6 @@
             inVal: row.querySelector('.split-in-input') ? row.querySelector('.split-in-input').value : 0
           })),
 
-          // Incidents
           incidents: Array.from(document.querySelectorAll('#incidentTable tbody tr')).map(row => ({
             serial: row.cells[0].innerText,
             type: row.querySelector('.status-select').value,
@@ -2101,7 +2159,6 @@
             photos: Array.from(row.querySelectorAll('.incident-thumb')).map(img => img.src)
           })),
 
-          // Events (Ordered)
           events: Array.from(document.querySelectorAll('#eventsTable tbody tr')).map(row => ({
             time: row.querySelector('.time-input').value,
             summary: row.querySelector('.event-summary') ? row.querySelector('.event-summary').innerText : row.cells[2].innerText,
@@ -2110,15 +2167,36 @@
           }))
         };
 
-        localStorage.setItem('dpw_daily_report_data', JSON.stringify(state));
+        try {
+          localStorage.setItem('dpw_daily_report_data', JSON.stringify(state));
+          return true;
+        } catch (storageErr) {
+          const safeState = Object.assign({}, state);
+          safeState.incidents = safeState.incidents.map(inc => ({ ...inc, photos: [] }));
+          try {
+            localStorage.setItem('dpw_daily_report_data', JSON.stringify(safeState));
+            return true;
+          } catch (retryErr) {
+            return false;
+          }
+        }
       } catch (e) {
-        console.warn('Auto-save storage warning:', e);
+        return false;
       }
     }
 
     function loadDashboardState() {
-      const saved = localStorage.getItem('dpw_daily_report_data');
-      if (!saved) return;
+      let saved;
+      try {
+        saved = localStorage.getItem('dpw_daily_report_data');
+      } catch (storageErr) {
+        return;
+      }
+
+      if (!saved) {
+        rebuildDefaultGatePreloads();
+        return;
+      }
 
       try {
         const state = JSON.parse(saved);
@@ -2128,9 +2206,40 @@
           updateFormattedDate(state.date);
         }
         if (state.shift) {
-          document.getElementById('shiftSelector').value = state.shift;
           updateShift(state.shift);
         }
+
+        if (state.dutySupervisor && document.getElementById('tbSupervisor')) {
+          setSelectValueWithFallback('tbSupervisor', state.dutySupervisor);
+          syncDuty('supervisor', document.getElementById('tbSupervisor').value);
+        }
+        if (state.dutyOp1 && document.getElementById('tbOp1')) {
+          setSelectValueWithFallback('tbOp1', state.dutyOp1);
+          syncDuty('op1', document.getElementById('tbOp1').value);
+        }
+        if (state.dutyOp2 && document.getElementById('tbOp2')) {
+          setSelectValueWithFallback('tbOp2', state.dutyOp2);
+          syncDuty('op2', document.getElementById('tbOp2').value);
+        }
+
+        if (document.getElementById('versionBadge')) {
+          if (state.docVersion && !state.docVersion.includes('LP-SMP') && !state.docVersion.includes('F 01')) {
+            document.getElementById('versionBadge').innerText = state.docVersion;
+          } else {
+            document.getElementById('versionBadge').innerText = 'Ver. 1.0';
+          }
+        }
+        if (document.getElementById('docCodeBadge')) {
+          document.getElementById('docCodeBadge').innerText = state.docCode || 'LP-SMP 10-F 01';
+        }
+        if (document.getElementById('issueDateBadge')) {
+          document.getElementById('issueDateBadge').innerText = state.issueDate || '04/11/2026';
+        }
+
+        if (state.incidentBaseSerials) {
+          incidentBaseSerials = Object.assign(incidentBaseSerials, state.incidentBaseSerials);
+        }
+
         if (state.perimeterVal) document.getElementById('kpiPerimeterVal').innerText = state.perimeterVal;
         if (state.perimeterSub) document.getElementById('kpiPerimeterSub').innerText = state.perimeterSub;
         if (state.sysCCTV) document.getElementById('sysCCTV').innerText = state.sysCCTV;
@@ -2139,92 +2248,101 @@
         if (state.sysNotes) document.getElementById('sysNotes').innerHTML = state.sysNotes;
         if (state.signLine) document.getElementById('signLine').innerText = state.signLine;
 
-        // Restore Insource Preloads
-        if (state.insourcePreloads) {
-          document.querySelectorAll('#insourceTable .preload-att-row').forEach((row, i) => {
-            if (state.insourcePreloads[i]) {
-              row.cells[0].innerText = state.insourcePreloads[i].role;
-              row.querySelector('.att-total').innerText = state.insourcePreloads[i].total;
-              row.querySelector('.att-attended').innerText = state.insourcePreloads[i].attended;
+        if (state.secPreloads) {
+          const rows = document.querySelectorAll('#securityTable tbody tr.preload-row');
+          state.secPreloads.forEach((s, idx) => {
+            if (rows[idx]) {
+              rows[idx].querySelector('.sec-tot').value = s.tot;
+              rows[idx].querySelector('.sec-att').value = s.att;
             }
           });
         }
-        // Restore Insource Added
-        if (state.insourceAdded) {
-          state.insourceAdded.forEach(item => {
-            const tbody = document.querySelector('#insourceTable tbody');
+        if (state.secAdded) {
+          const tbody = document.querySelector('#securityTable tbody');
+          state.secAdded.forEach(s => {
             const tr = document.createElement('tr');
-            tr.className = 'att-row added-att-row';
+            tr.className = 'att-sec-row added-row';
             tr.innerHTML = `
-              <td contenteditable="true">${item.role}</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()" style="text-align: center; font-weight:600;">${item.total}</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()" style="text-align: center; font-weight:600;">${item.attended}</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col">${trashIconHTML}</td>
+              <td contenteditable="true">${s.role}</td>
+              <td style="text-align: center;"><input type="number" min="0" value="${s.tot}" class="cell-input sec-tot" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td>
+              <td style="text-align: center;"><input type="number" min="0" value="${s.att}" class="cell-input sec-att" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td>
+              <td class="sec-leave" style="text-align: center; color: var(--text-muted);">0</td>
+              <td class="sec-rate-cell" style="text-align: center;"><span class="status-pill pill-alert">0%</span></td>
+              <td class="action-col"><button type="button" class="btn-delete" title="Delete" onclick="deleteRow(this)">${trashSvgHTML}</button></td>
             `;
             tbody.appendChild(tr);
           });
         }
 
-        // Restore Outsource Preloads
-        if (state.outsourcePreloads) {
-          document.querySelectorAll('#outsourceTable .preload-att-row').forEach((row, i) => {
-            if (state.outsourcePreloads[i]) {
-              row.cells[0].innerText = state.outsourcePreloads[i].contractor;
-              row.querySelector('.att-total').innerText = state.outsourcePreloads[i].total;
-              row.querySelector('.att-attended').innerText = state.outsourcePreloads[i].attended;
-            }
+        if (state.mpInsourcePreloads) {
+          const rows = document.querySelectorAll('#manpowerInsourceTable tbody tr.preload-row');
+          state.mpInsourcePreloads.forEach((s, idx) => {
+            if (rows[idx]) rows[idx].querySelector('.mp-count').value = s.count;
           });
         }
-        // Restore Outsource Added
-        if (state.outsourceAdded) {
-          state.outsourceAdded.forEach(item => {
-            const tbody = document.querySelector('#outsourceTable tbody');
+        if (state.mpInsourceAdded) {
+          const tbody = document.querySelector('#manpowerInsourceTable tbody');
+          state.mpInsourceAdded.forEach(s => {
             const tr = document.createElement('tr');
-            tr.className = 'att-row added-att-row';
+            tr.className = 'mp-in-row added-row';
             tr.innerHTML = `
-              <td contenteditable="true">${item.contractor}</td>
-              <td class="att-total" contenteditable="true" oninput="calculateAttendance()" style="text-align: center; font-weight:600;">${item.total}</td>
-              <td class="att-attended" contenteditable="true" oninput="calculateAttendance()" style="text-align: center; font-weight:600;">${item.attended}</td>
-              <td class="att-leave" style="text-align: center; color: var(--text-muted);">0</td>
-              <td class="att-status" style="text-align: center;"><span class="status-pill pill-active">100%</span></td>
-              <td class="action-col">${trashIconHTML}</td>
+              <td contenteditable="true">${s.dept}</td>
+              <td style="text-align: center;"><input type="number" min="0" value="${s.count}" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td>
+              <td class="action-col"><button type="button" class="btn-delete" title="Delete" onclick="deleteRow(this)">${trashSvgHTML}</button></td>
             `;
             tbody.appendChild(tr);
           });
         }
 
-        // Restore Gate Preloads
-        if (state.gatePreloads) {
-          document.querySelectorAll('#gateTable .gate-preload-row').forEach((row, i) => {
-            const s = state.gatePreloads[i];
-            if (s) {
-              row.querySelector('.gate-truck-count').value = s.count;
-              row.cells[1].querySelector('input').value = s.entry;
-              row.cells[2].querySelector('input').value = s.exit;
-              row.querySelector('.status-select').value = s.status;
-              if (row.querySelector('.split-in-input')) {
-                row.querySelector('.split-in-input').value = s.inVal;
-              }
-            }
+        if (state.mpOutsourcePreloads) {
+          const rows = document.querySelectorAll('#manpowerOutsourceTable tbody tr.preload-row');
+          state.mpOutsourcePreloads.forEach((s, idx) => {
+            if (rows[idx]) rows[idx].querySelector('.mp-count').value = s.count;
           });
         }
-        // Restore Gate Added
+        if (state.mpOutsourceAdded) {
+          const tbody = document.querySelector('#manpowerOutsourceTable tbody');
+          state.mpOutsourceAdded.forEach(s => {
+            const tr = document.createElement('tr');
+            tr.className = 'mp-out-row added-row';
+            tr.innerHTML = `
+              <td contenteditable="true">${s.contractor}</td>
+              <td style="text-align: center;"><input type="number" min="0" value="${s.count}" class="cell-input mp-count" oninput="calculateAttendance(); autoSave();" style="font-weight:700;"></td>
+              <td class="action-col"><button type="button" class="btn-delete" title="Delete" onclick="deleteRow(this)">${trashSvgHTML}</button></td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+
+        // Restore Gate Preloads Safely
+        if (Array.isArray(state.gatePreloads) && state.gatePreloads.length > 0) {
+          const tbody = document.querySelector('#gateTable tbody');
+          tbody.querySelectorAll('.gate-preload-row').forEach(r => r.remove());
+          const firstAdded = tbody.querySelector('tr.added-row');
+
+          state.gatePreloads.forEach(s => {
+            const tr = document.createElement('tr');
+            tr.className = 'gate-preload-row';
+            tr.innerHTML = getGatePreloadRowHTML(s.name, s.count, s.entry, s.exit, s.status, s.inVal);
+            if (firstAdded) {
+              tbody.insertBefore(tr, firstAdded);
+            } else {
+              tbody.appendChild(tr);
+            }
+          });
+        } else {
+          rebuildDefaultGatePreloads();
+        }
+
         if (state.gateAdded) {
           const tbody = document.querySelector('#gateTable tbody');
           state.gateAdded.forEach(s => {
             const tr = document.createElement('tr');
+            tr.className = 'added-row';
             tr.innerHTML = `
-              <td style="text-align: center;">
-                <input type="number" min="0" value="${s.count}" class="cell-input gate-truck-count" oninput="calculateGateTransactions()" />
-              </td>
-              <td style="text-align: center;">
-                <input type="time" class="cell-input time-input" value="${s.entry}" />
-              </td>
-              <td style="text-align: center;">
-                <input type="time" class="cell-input time-input" value="${s.exit}" />
-              </td>
+              <td style="text-align: center;"><input type="number" min="0" value="${s.count}" class="cell-input gate-truck-count" oninput="calculateGateTransactions(); autoSave();" /></td>
+              <td style="text-align: center;"><input type="time" class="cell-input time-input" value="${s.entry}" /></td>
+              <td style="text-align: center;"><input type="time" class="cell-input time-input" value="${s.exit}" /></td>
               <td contenteditable="true" style="color: var(--text-main);">${s.reason}</td>
               <td style="text-align: center;">
                 <select class="status-select pill-active" onchange="updateGateRowStatus(this)">
@@ -2233,25 +2351,21 @@
                   <option value="Split" ${s.status === 'Split' ? 'selected' : ''}>Split</option>
                 </select>
                 <div class="split-detail" style="display: none;">
-                  <span class="status-pill pill-active" style="padding: 1px 4px;">
-                    <input type="number" min="0" value="${s.inVal}" class="split-in-input" oninput="calculateGateTransactions()" title="On Site" /> In
-                  </span>
-                  <span class="status-pill pill-neutral" style="padding: 1px 4px;">
-                    <span class="split-out-val">0</span> Out
-                  </span>
+                  <span class="status-pill pill-active" style="padding: 1px 3px;"><input type="number" min="0" value="${s.inVal}" class="split-in-input" oninput="calculateGateTransactions(); autoSave();" title="On Site" /> In</span>
+                  <span class="status-pill pill-neutral" style="padding: 1px 3px;"><span class="split-out-val">0</span> Out</span>
                 </div>
               </td>
-              <td class="action-col"><button class="btn-delete" title="Delete Row" onclick="deleteRow(this)"><svg class="trash-svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1z"></path><rect x="3.5" y="5" width="17" height="2.5" rx="1"></rect><path d="M5.5 7.5L7 20a2 2 0 0 0 2 1.5h6a2 2 0 0 0 2-1.5l1.5-12.5"></path><line x1="9.5" y1="11" x2="9.5" y2="18"></line><line x1="12" y1="11" x2="12" y2="18"></line><line x1="14.5" y1="11" x2="14.5" y2="18"></line></svg></button></td>
+              <td class="action-col" style="width: 28px; text-align: center;"><button type="button" class="btn-delete" title="Delete" onclick="deleteRow(this)">${trashSvgHTML}</button></td>
             `;
             tbody.appendChild(tr);
           });
         }
 
-        // Restore Incidents
         if (state.incidents) {
           const tbody = document.querySelector('#incidentTable tbody');
           state.incidents.forEach(inc => {
             const tr = document.createElement('tr');
+            tr.className = 'added-row';
             let photosHTML = '';
             if (inc.photos && inc.photos.length > 0) {
               photosHTML = inc.photos.map(p => `
@@ -2262,7 +2376,7 @@
               `).join('');
             }
             tr.innerHTML = `
-              <td><strong style="color:var(--dp-navy);" contenteditable="true">${inc.serial}</strong></td>
+              <td style="text-align: center;"><strong style="color:var(--dp-navy);" class="incident-serial-val">--</strong></td>
               <td>
                 <select class="status-select" onchange="updateIncidentStyle(this)">
                   <option value="Security Notice" ${inc.type === 'Security Notice' ? 'selected' : ''}>Security Notice</option>
@@ -2275,32 +2389,34 @@
                 </select>
               </td>
               <td contenteditable="true">${inc.desc}</td>
-              <td style="text-align: center;">
-                <div class="photo-gallery">
-                  <div class="photo-items-wrap">${photosHTML}</div>
-                  <label class="btn-attach-photo" title="Attach Photos">
+              <td style="width: 110px; text-align: center; vertical-align: middle;">
+                <div class="photo-gallery" style="display: flex; align-items: center; justify-content: center; gap: 4px; margin: 0 auto; width: 100%;">
+                  <div class="photo-items-wrap" style="display: flex; align-items: center; justify-content: center; gap: 4px;">${photosHTML}</div>
+                  <label class="btn-attach-photo" title="Attach Photos" style="margin: 0 auto;">
                     <input type="file" accept="image/*" multiple style="display:none;" onchange="handleIncidentPhotos(this)" />
                     <span>📷 +</span>
                   </label>
                 </div>
               </td>
-              <td class="action-col"><button class="btn-delete" title="Delete Row" onclick="deleteRow(this)"><svg class="trash-svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1z"></path><rect x="3.5" y="5" width="17" height="2.5" rx="1"></rect><path d="M5.5 7.5L7 20a2 2 0 0 0 2 1.5h6a2 2 0 0 0 2-1.5l1.5-12.5"></path><line x1="9.5" y1="11" x2="9.5" y2="18"></line><line x1="12" y1="11" x2="12" y2="18"></line><line x1="14.5" y1="11" x2="14.5" y2="18"></line></svg></button></td>
+              <td class="action-col" style="width: 28px; text-align: center; vertical-align: middle;">
+                <button type="button" class="btn-delete" title="Delete Incident" onclick="deleteRow(this)">
+                  ${trashSvgHTML}
+                </button>
+              </td>
             `;
             tbody.appendChild(tr);
             updateIncidentStyle(tr.querySelector('.status-select'));
           });
         }
 
-        // Restore Events (Draggable)
         if (state.events) {
           const tbody = document.querySelector('#eventsTable tbody');
           state.events.forEach(ev => {
             const tr = document.createElement('tr');
+            tr.className = 'added-row';
             tr.innerHTML = `
               <td class="drag-col" style="text-align: center;"><span class="drag-handle" title="Drag to reorder">⋮⋮</span></td>
-              <td style="text-align: center;">
-                <input type="time" class="cell-input time-input" value="${ev.time}" />
-              </td>
+              <td style="text-align: center;"><input type="time" class="cell-input time-input" value="${ev.time}" /></td>
               <td contenteditable="true" class="event-summary">${ev.summary}</td>
               <td>
                 <select class="status-select ${ev.status === 'Followed' ? 'pill-active' : 'pill-neutral'}" onchange="this.className = 'status-select ' + (this.value === 'Followed' ? 'pill-active' : 'pill-neutral'); autoSave();">
@@ -2309,7 +2425,7 @@
                 </select>
               </td>
               <td contenteditable="true" class="event-dept">${ev.dept}</td>
-              <td class="action-col"><button class="btn-delete" title="Delete Row" onclick="deleteRow(this)"><svg class="trash-svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1z"></path><rect x="3.5" y="5" width="17" height="2.5" rx="1"></rect><path d="M5.5 7.5L7 20a2 2 0 0 0 2 1.5h6a2 2 0 0 0 2-1.5l1.5-12.5"></path><line x1="9.5" y1="11" x2="9.5" y2="18"></line><line x1="12" y1="11" x2="12" y2="18"></line><line x1="14.5" y1="11" x2="14.5" y2="18"></line></svg></button></td>
+              <td class="action-col" style="width: 28px; text-align: center;"><button type="button" class="btn-delete" title="Delete Row" onclick="deleteRow(this)">${trashSvgHTML}</button></td>
             `;
             tbody.appendChild(tr);
           });
@@ -2319,10 +2435,16 @@
       }
     }
 
-    // RESET REPORT
+    // BULLETPROOF RESET REPORT (GUARANTEES RESTORING ALL 5 DEFAULT PRELOADS)
     function resetReport() {
       if (confirm("Are you sure you want to start a new report? This will reset all inserted data.")) {
-        localStorage.removeItem('dpw_daily_report_data');
+        isResetting = true;
+        clearTimeout(saveTimeout);
+        try {
+          localStorage.removeItem('dpw_daily_report_data');
+        } catch (e) {
+          console.error(e);
+        }
         window.location.reload();
       }
     }
@@ -2330,15 +2452,23 @@
     // ATTACH GLOBAL LISTENERS
     document.addEventListener('input', () => autoSave());
     document.addEventListener('change', () => autoSave());
+    window.addEventListener('beforeunload', () => {
+      if (!isResetting && !isLoadingState) {
+        saveDashboardState();
+      }
+    });
 
     // INITIALIZE DASHBOARD
     window.addEventListener('DOMContentLoaded', () => {
+      isLoadingState = true;
       initTodayDate();
       loadDashboardState();
       calculateAttendance();
       calculateGateTransactions();
+      recalculateIncidentSerials();
       calculateIncidents();
       makeEventsDraggable();
+      isLoadingState = false;
     });
   </script>
 
