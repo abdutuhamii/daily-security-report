@@ -1021,6 +1021,7 @@
         <option value="Mahmoud Magdy">Mahmoud Magdy</option>
         <option value="Hazem Taha">Hazem Taha</option>
         <option value="Youssef Esmat">Youssef Esmat</option>
+        <option value="None">None</option>
       </select>
 
       <span>Operator 2:</span>
@@ -1033,6 +1034,7 @@
         <option value="Mahmoud Magdy">Mahmoud Magdy</option>
         <option value="Hazem Taha">Hazem Taha</option>
         <option value="Youssef Esmat">Youssef Esmat</option>
+        <option value="None">None</option>
       </select>
     </div>
 
@@ -1089,8 +1091,8 @@
         </span>
 
         <span class="badge badge-date" onclick="openDatePicker()" title="Click to open calendar">
-          📅 <strong>Date:</strong> <span id="dateDisplay">04/11/2026 (Wednesday)</span>
-          <input type="date" id="calendarInput" value="2026-11-04"
+          📅 <strong>Date:</strong> <span id="dateDisplay"></span>
+          <input type="date" id="calendarInput" value=""
             style="position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;"
             onchange="updateFormattedDate(this.value); autoSave();">
         </span>
@@ -1522,8 +1524,13 @@
       const input = document.getElementById('calendarInput');
       if (!input) return;
       if (!input.value || force) {
-        input.value = "2026-11-04";
-        updateFormattedDate("2026-11-04");
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const formattedDate = `${year}-${month}-${day}`;
+        input.value = formattedDate;
+        updateFormattedDate(formattedDate);
       }
     }
 
@@ -1539,12 +1546,22 @@
     }
 
     function updateFormattedDate(isoDate) {
-      if (!isoDate) return;
+      if (!isoDate) {
+        initTodayDate(true);
+        return;
+      }
+
+      const parts = isoDate.split('-');
+      if (parts.length !== 3) return;
+      
       const [year, month, day] = isoDate.split('-');
       const d = new Date(year, month - 1, day);
       const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
       const dayName = days[d.getDay()];
-      document.getElementById('dateDisplay').innerText = `${day}/${month}/${year} (${dayName})`;
+      const dateDisplay = document.getElementById('dateDisplay');
+      if (dateDisplay) {
+        dateDisplay.innerText = `${day}/${month}/${year} (${dayName})`;
+      }
     }
 
     // SHIFT SELECTOR
